@@ -7,10 +7,10 @@ export default function MenuBar() {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [modalContent, setModalContent] = useState({ title: '', action: '', Requirements: [], Features:[] });
-    const [IsInStock, Setisinstock] = useState(false);
+    const [IsInStock, Setisinstock] = useState(true);
     const handleClose = () => {
         setShow(false);
-        Setisinstock(false);
+        Setisinstock(true);
     }
 
     const handleShow = (title, action, Requirements, Features) => {
@@ -48,22 +48,25 @@ const features = [
                 <div className="container">
                     <div className="row">
                         {[
-                            { title: 'Whitelist' },
-                            { title: 'LearnReflect'},
-                            { title: 'Buy VideoUpscaler AI', action: 'The ultimate solution',Features: features, Requirements: requirements },
-                            { title: 'LearnReflect AI - GPT Assistant', action: 'LR-Chatbot: Your Personalized Self-Improvement Assistant. Introducing the LR-Chatbot, an integral component of the LearnReflect self-improvement platform, designed to empower your personal growth journey. This AI-driven chatbot leverages advanced machine learning techniques to provide tailored guidance and support as you work towards achieving your goals. Pre-trained specifically for self-improvement, the LR-Chatbot engages in meaningful conversations, continuously learning from your interactions to adapt to your unique aspirations. Whether you’re striving to build discipline, enhance motivation, or develop effective daily routines, this chatbot becomes a personal companion dedicated to your success. The LR-Chatbot offers personalized discipline-building strategies and motivation techniques, ensuring that you remain focused and accountable on your journey. With its ability to understand your evolving needs, the chatbot provides insights and encouragement that resonate with you, making self-improvement an achievable goal. In conjunction with our advanced AI models for enhancing video and audio quality, LearnReflect serves as an all-in-one solution for anyone committed to self-improvement and productivity.' },
-                            { title: 'Contact'},
+                            { title: 'Get Early Access – Whitelist Today' },
+                            { title: 'LearnReflect System'},
+                            { title: 'Boost Video Quality – Purchase LR-VideoEnhancer', action: 'The ultimate solution',Features: features, Requirements: requirements },
+                            { title: 'LearnReflect Agent', action: 'LR-Chatbot: Your Personalized Self-Improvement Assistant. Introducing the LR-Chatbot, an integral component of the LearnReflect self-improvement platform, designed to empower your personal growth journey. This AI-driven chatbot leverages advanced machine learning techniques to provide tailored guidance and support as you work towards achieving your goals. Pre-trained specifically for self-improvement, the LR-Chatbot engages in meaningful conversations, continuously learning from your interactions to adapt to your unique aspirations. Whether you’re striving to build discipline, enhance motivation, or develop effective daily routines, this chatbot becomes a personal companion dedicated to your success. The LR-Chatbot offers personalized discipline-building strategies and motivation techniques, ensuring that you remain focused and accountable on your journey. With its ability to understand your evolving needs, the chatbot provides insights and encouragement that resonate with you, making self-improvement an achievable goal. In conjunction with our advanced AI models for enhancing video and audio quality, LearnReflect serves as an all-in-one solution for anyone committed to self-improvement and productivity.' },
+                            { title: 'Contact us'},
                             
                       
                         ].map((item, index) => (
                             <div className="col-12 mb-3" key={index}>
                                 <span
                                     onClick={() => {
-                                        if (item.title === ('Whitelist')) {
+                                        if (item.title === ('Get Early Access – Whitelist Today')) {
                                             navigate('./PageComponent')
-                                        } else if (item.title === 'Contact') {
+                                        } else if (item.title === 'Contact us') {
                                             navigate('./Contact');
-                                        }else if (item.title === 'LearnReflect'){
+                                        }else if (item.title === 'LearnReflect System'){
+                                            navigate("/Landingpage")
+                                        }
+                                        else if (item.title === 'LearnReflect'){
                                             navigate('./LearnReflect')
                                         }
                                          else {
@@ -115,16 +118,13 @@ const features = [
 
                 </Modal.Body>
                 <Modal.Footer>
-                    {IsInStock ?
-                        <div>
-                            <Button variant="secondary" onClick={handleClose}>Close</Button>
-                            <Button variant="secondary" onClick={handlepayment}>Buy</Button>
-                        </div>
-                        :
-                        <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    }
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+                
+                {modalContent.title === "Buy VideoUpscaler AI" && IsInStock && (
+                    <Button variant="secondary" onClick={handlepayment}>Buy</Button>
+                )}
+            </Modal.Footer>
 
-                </Modal.Footer>
             </Modal>
 
         </div>

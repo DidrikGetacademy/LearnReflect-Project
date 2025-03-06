@@ -1,37 +1,38 @@
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import React from "react";
-import CountDown from "../../LearnReflect/src/LearnReflect/PreRelease/CountDown";
-import HomePage from "../../LearnReflect/src/LearnReflect/LearnReflect Discipline/HomePage";
-import LoginPage from "../../LearnReflect/src/LearnReflect/User/LoginPage";
-import AboutPage from "../../LearnReflect/src/LearnReflect/LearnReflect Discipline/AboutPage.js";
-import Futures from "../../LearnReflect/src/LearnReflect/User/FuturesPage";
-import AuthProvider from "../../LearnReflect/src/LearnReflect/Components/Authanciation/AuthProvider";
-import Dashboard from "../../LearnReflect/src/LearnReflect/User/Dashboard.js";
-import PrivateRoute from "../../LearnReflect/src/LearnReflect/Components/Authanciation/PrivateRoute.js";
-import PrivateRouteFuture from "../../LearnReflect/src/LearnReflect/Components/Authanciation/PrivateRouteFuture.js";
-import FutureZero from "../../LearnReflect/src/LearnReflect/LearnReflect Discipline/FutureZero.js";
-import LandingPage from "../../LearnReflect/src/LearnReflect/MainSite/LandingPage.js";
-import ShopPage from "../../LearnReflect/src/LearnReflect/Shop/Shop.js";
-import ProductCard from "../../LearnReflect/src/LearnReflect/Shop/ProductCard.js";
-import Contact from "../../LearnReflect/src/LearnReflect/Contact/Contact.js";
-import Completion from "../../LearnReflect/src/LearnReflect/Shop/PaymentStripe/Completion.js";
-import AIUpscalePage from "../../LearnReflect/src/LearnReflect/AI-LearnReflect/AIUpscalePage.js";
-import Admin from "../../LearnReflect/src/LearnReflect/AdminPanel/Admin.js";
-import AdminRoute from "../../LearnReflect/src/LearnReflect/Components/Authanciation/AdminRoute.js";
-import Timer from "../../LearnReflect/src/LearnReflect/Components/TimerComponent.js";
-import Inspire from "../../LearnReflect/src/LearnReflect/Inspire/Inspire.js";
-import RegistrationForm from "../../LearnReflect/src/LearnReflect/User/UserRegistration.js";
-import Chatbot from "../../LearnReflect/src/LearnReflect/AI-LearnReflect/Chat/ChatbotRender.js";
-import AudioEnchancerJSX from "../../LearnReflect/src/LearnReflect/AI-LearnReflect/Audio/AudioRender.js";
-import VideoEnchancerJSX from "../../LearnReflect/src/LearnReflect/AI-LearnReflect/Video/VideoRender.js";
-import LearnReflectFont from './LearnReflect/MainSite/LandingPage'
+import CountDown from "./Countdown_prerealse/CountDown.js";
+import HomePage from "./LearnReflect Discipline/HomePage";
+
+import LoginPage from "./User/LoginPage";
+import AboutPage from "./LearnReflect Discipline/AboutPage.js";
+import Futures from "./User/FuturesPage";
+import AuthProvider from "./Components/Authanciation/AuthProvider";
+import Dashboard from ".//User/Dashboard.js";
+import PrivateRoute from "./Components/Authanciation/PrivateRoute.js";
+import PrivateRouteFuture from "./Components/Authanciation/PrivateRouteFuture.js";
+import FutureZero from "./LearnReflect Discipline/FutureZero.js";
+import LandingPage from "./MainSite/LandingPage.js";
+import ShopPage from "./Shop/Shop.js";
+import ProductCard from "./Shop/ProductCard.js";
+import Contact from "./Contact/Contact.js";
+import Completion from "./Shop/PaymentStripe/Completion.js";
+import AIUpscalePage from "./AI-LearnReflect/AIUpscalePage.js";
+import Admin from "./AdminPanel/Admin.js";
+import AdminRoute from "./Components/Authanciation/AdminRoute.js";
+import Timer from "./Components/TimerComponent.js";
+import Inspire from "./Inspire/Inspire.js";
+import RegistrationForm from "./User/UserRegistration.js";
+import Chatbot from "./AI-LearnReflect/Chat/ChatbotRender.js";
+import AudioEnchancerJSX from "./AI-LearnReflect/Audio/AudioRender.js";
+import VideoEnchancerJSX from "./AI-LearnReflect/Video/VideoRender.js";
+
 
 
 function AppLR() {
   return (
-    <BrowserRouter>
+
       <AuthProvider>
         <Routes>
           <Route path="/Landingpage" element={<LandingPage />} />
@@ -78,7 +79,6 @@ function AppLR() {
 
         </Routes>
       </AuthProvider>
-    </BrowserRouter>
   );
 }
 

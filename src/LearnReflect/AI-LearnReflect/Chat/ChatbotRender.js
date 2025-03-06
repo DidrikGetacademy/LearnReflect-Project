@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-//import "../../css/ChatGpt.css";
+import "../../css/ChatbotInterface.css";
 
 
 
@@ -13,19 +13,22 @@ function Chatbot() {
   const [feedbackSubmitted, setFeedbackSubmitted] = useState(false); //tracking if feedback is submitted
   const [loading, setLoading] = useState(false); // Loding state for requests
   const [feedbackText,setFeedbackText] = useState("")
-  const [conversationHistory, setConversationHistory] = useState([ { role: "system", content: "You are a helpful motivational assistant designed to help individuals with self-improvement. Your goal is to inspire, encourage, and provide practical advice for people working toward their personal growth, goals, and better habits. Be empathetic, supportive, and positive in all your responses. You should listen to the user's concerns, offer motivating feedback, suggest actionable steps for improvement, and maintain a tone of encouragement and empowerment. Help users believe in themselves, while also providing useful and realistic advice for self-growth."}])
+  const [conversationHistory, setConversationHistory] = useState([ 
+    { role: "system", content: "You are a helpful motivational assistant designed to help individuals with self-improvement. Your goal is to inspire, encourage, and provide practical advice for people working toward their personal growth, goals, and better habits. Be empathetic, supportive, and positive in all your responses. You should listen to the user's concerns, offer motivating feedback, suggest actionable steps for improvement, and maintain a tone of encouragement and empowerment. Help users believe in themselves, while also providing useful and realistic advice for self-growth."}])
 
 
 
   //FUNCTION that calculate/estimate the token count based on the length of message/conversation history.
   const estimateTokenCount = (messages) => {
     let totalTokens = 0;
-    messages.foreach(message => {
+    messages.forEach(message => {
       const content = message.content;
       totalTokens += Math.ceil(content.length / 4); //Approximate 1 token = 4 characters
     });
     return totalTokens
   }
+
+
 
 
   //Function that trims the conversation history too always be valid within the MAX_TOKENS value set.
@@ -46,15 +49,18 @@ function Chatbot() {
   const RequestAssistantResponse = async () => {
     if (Usermessage.trim() === "") return; //Stops invalid usermessage early.
     setLoading(true);// Show the loading state
+
     const newUserMessage = { role: 'user', content: Usermessage};
     const updatedHistory = [...conversationHistory, newUserMessage]; // Adds the user message to the history
-
     const trimmedHistory = trimConversationHistory(updatedHistory) //Trims conversation history before sending API POST
 
 
     const requestBody = {
-      message: trimmedHistory //Sends the entire conversation with the user and Assistant
+      message: trimmedHistory //Sends the entire conversation with the user and Assistant in ChatML-format too the backend.
     };
+
+    console.log("Request Body Sent:", JSON.stringify(requestBody, null, 2)); 
+
     try {
       const response = await fetch("http://localhost:5000//chatbot/chat", {
         method: "POST",
@@ -137,63 +143,77 @@ function Chatbot() {
 
 
   
+
   return (
-    <div className="PageContainer">
-      <div className="GPTBackground">
-        <h1>LR-improvement Assistant</h1>
-        <div className="userinputcontainer">
-          <div>
-          { conversationHistory.length > 1 && ( 
-            <>
-            {conversationHistory.map((msg, index) => (
-              <p key={index} className={msg.role === "user" ? "User-P" : "Assistant-P"}>
-                {msg.role === "user" ? `User: ${msg.content}` : `LR-ChatAssistant: ${msg.content}`} 
-              </p>
-            ))}
-            </>
-          )}
+    <div className="chat-container">
+      <div className="messages-container">
+        {conversationHistory
+          .filter(msg => msg.role !== 'system') 
+          .map((msg, index) => (
+            <div key={index} className={`message ${msg.role === 'user' ? 'user' : 'bot'}`}>
+              <div className="avatar">
+                {msg.role === 'user' ? (
+                  <img src="user-avatar.png" alt="User" className="avatar-img" />
+                ) : (
+                  <img src="bot-avatar.png" alt="AI Assistant" className="avatar-img" />
+                )}
+              </div>
+              <div className="message-content">
+                {msg.content}
+              </div>
+            </div>
+          ))}
+        {loading && (
+          <div className="message bot">
+            <div className="avatar">
+              <img src="bot-avatar.png" alt="AI Assistant" className="avatar-img" />
+            </div>
+            <div className="typing-indicator">
+              <div className="typing-dot"></div>
+              <div className="typing-dot"></div>
+              <div className="typing-dot"></div>
+            </div>
           </div>
-   
-          <input 
-           placeholder="Ask LR-ChatAssistant" 
-           className="ChatBox" 
-           type="text"
-           value={Usermessage}
-            onChange={e => setUsermessage(e.target.value)}  // sets the input as user types.
-            />
+        )}
+      </div>
+
+      <div className="input-container">
+        <div className="input-wrapper">
+          <textarea
+            className="chat-input"
+            placeholder="Ask LR-ChatAssistant"
+            value={Usermessage}
+            onChange={e => setUsermessage(e.target.value)}
+            disabled={loading}
+          />
+          <button className="send-button" onClick={RequestAssistantResponse} disabled={loading}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
         </div>
-        <button className="sendmessage" onClick={RequestAssistantResponse} disabled={loading}>
-          {loading ? "sending..." : "Send Message"}
-        </button>
+      </div>
 
-
-        <div className="Feedback-Container">
-          <button
-            onClick={() => handleFeedback(1)}
-            disabled={feedbackSubmitted || loading}
-          >
+      <div className="Feedback-Container">
+        <div className="feedback-buttons">
+          <button onClick={() => handleFeedback(1)} disabled={feedbackSubmitted || loading}>
             👍 Positive
           </button>
-          <button
-            onClick={() => handleFeedback(-1)}
-            disabled={feedbackSubmitted || loading}
-          >
+          <button onClick={() => handleFeedback(-1)} disabled={feedbackSubmitted || loading}>
             👎 Negative
           </button>
-          <textarea
+        </div>
+        <textarea
           placeholder="Provide additional feedback (optional)"
           value={feedbackText}
           onChange={handleFeedbackTextChange}
           disabled={feedbackSubmitted || loading}
-          />
-          <button onClick={HandleFeedbackSubmit} disabled={loading}>
-           {loading ? "Submitting feedback..." : "submit feedback"}
-          </button>
-        </div>
-        <div />
+        />
+        <button onClick={HandleFeedbackSubmit} disabled={loading}>
+          {loading ? "Submitting feedback..." : "Submit feedback"}
+        </button>
       </div>
     </div>
   );
 }
-
 export default Chatbot;
