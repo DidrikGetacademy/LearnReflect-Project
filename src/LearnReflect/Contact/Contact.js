@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import "../css/ContactPage.css";
+import "../css/LearnReflect.css";
 import { Link } from "react-router-dom";
 import LR from "../../Images/LearnReflect.jpeg";
 import axios from 'axios';

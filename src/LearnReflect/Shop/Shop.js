@@ -7,7 +7,7 @@ import women from "./images/shopwomen.avif";
 import men from "./images/working.webp";
 import cart2 from "./images/cart2.png";
 import search from "./images/search.png";
-//import "../css/shop.css";
+import "../css/LearnReflect.css";
 
 function ShopPage() {
   const [showInput, setShowInput] = useState(false);

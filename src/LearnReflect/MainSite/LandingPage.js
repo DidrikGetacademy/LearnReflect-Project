@@ -1,7 +1,7 @@
 // LandingPage.js
 import { Link } from "react-router-dom";
 import React from "react";
-//import "../css/Landing.css";
+import "../css/LearnReflect.css";
 
 
 import background from "../../Images/black2.png";
