@@ -1,29 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.af55b010.css",
-    "main.js": "/static/js/main.2eda67d8.js",
+    "main.css": "/static/css/main.3763d154.css",
+    "main.js": "/static/js/main.72428b1e.js",
+    "static/media/8kbackgroundmenubar.png": "/static/media/8kbackgroundmenubar.88e8a938f7eddf1e497a.png",
     "static/media/AI1.png": "/static/media/AI1.e64f1f9051446c24cc5a.png",
     "static/media/Oppskalert2.png": "/static/media/Oppskalert2.9c511a739a58149e126a.png",
     "static/media/Oppskalert1.png": "/static/media/Oppskalert1.fbf0d0d3e27bc644de4e.png",
     "static/media/bedre.jpg": "/static/media/bedre.b81bf348fee452aa981f.jpg",
     "static/media/APP1.png": "/static/media/APP1.af333409e220c95e39ff.png",
     "static/media/APP2.png": "/static/media/APP2.474509de89073c4f9b01.png",
+    "static/media/working.webp": "/static/media/working.adbd6a6bcbf87934f5ef.webp",
+    "static/media/4.jpg": "/static/media/4.24c738fa2beb1836f2ba.jpg",
     "static/media/xx.png": "/static/media/xx.97d93d72dca3b8e208e7.png",
+    "static/media/shopwomen.avif": "/static/media/shopwomen.471f5bcaa5c9aea987d8.avif",
     "static/media/APP3.png": "/static/media/APP3.ed402e4e74c6a0d7b08d.png",
     "static/media/APP4.png": "/static/media/APP4.c94a0749f201184ec918.png",
+    "static/media/palglg Men.jpg": "/static/media/palglg Men.2b01bed7f4a9164ad8fc.jpg",
     "static/media/app5.png": "/static/media/app5.58ca4d168ec30c4e0dd6.png",
     "static/media/app7.png": "/static/media/app7.9711d23c949c0c9d8711.png",
     "static/media/app6.png": "/static/media/app6.da47ccc2ec1f83b2f16e.png",
     "static/media/12.png": "/static/media/12.ece1890aa18f92c39784.png",
     "static/media/app9.png": "/static/media/app9.272d5413aeeb86578d76.png",
     "static/media/app10.png": "/static/media/app10.501434f899bb2c8ec620.png",
+    "static/media/Lion.jpg": "/static/media/Lion.16c0b0e9e0057257fa9b.jpg",
+    "static/media/hoodie2.jpg": "/static/media/hoodie2.e7cccf96f294da4928c7.jpg",
     "static/media/app8.png": "/static/media/app8.55746a98a712cdd7c3cc.png",
     "index.html": "/index.html",
-    "main.af55b010.css.map": "/static/css/main.af55b010.css.map",
-    "main.2eda67d8.js.map": "/static/js/main.2eda67d8.js.map"
+    "main.3763d154.css.map": "/static/css/main.3763d154.css.map",
+    "main.72428b1e.js.map": "/static/js/main.72428b1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.af55b010.css",
-    "static/js/main.2eda67d8.js"
+    "static/css/main.3763d154.css",
+    "static/js/main.72428b1e.js"
   ]
 }

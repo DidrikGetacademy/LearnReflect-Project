@@ -1,12 +1,12 @@
 // LandingPage.js
 import { Link } from "react-router-dom";
 import React from "react";
-import "../css/LearnReflect.css";
+import "../Css/LearnReflect.css";
 
 
-import background from "../../Images/black2.png";
-import PageImg from "../../Images/Lion.jpg";
-import trainer from "../../Images/4.jpg";
+import background from "../../LearnReflect/Images/black2.png";
+import PageImg from "../../LearnReflect/Images/Lion.jpg";
+import trainer from "../../LearnReflect/Images/4.jpg";
 function LearnReflectFont() {
   return (
     <div className="Container-Landingpage">

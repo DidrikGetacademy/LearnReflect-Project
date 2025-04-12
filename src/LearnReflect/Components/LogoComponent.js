@@ -1,7 +1,7 @@
 import React from 'react';
-import tiktok from '../../Images/tiktok.png';
-import Instagram from '../../Images/insta.png';
-import X from '../../Images/xx.png';
+import tiktok from '../Images/tiktok.png';
+import Instagram from '../Images/insta.png';
+import X from '../Images/xx.png';
 
 function LComponent() {
   return (

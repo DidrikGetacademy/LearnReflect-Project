@@ -7,7 +7,7 @@ function ShoppingCart({
   updateCounts,
   setOpenCart
 }) {
-  const [hidden,setHidden] = useState(false);
+  const [hidden] = useState(false);
   const [totalAmount, setTotal] = useState(0);
   const Navigate = useNavigate();
 

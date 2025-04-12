@@ -4,34 +4,42 @@ import axios from "axios";
 
 function AudioEnchancerJSX() {
   const [file, setFile] = useState(null);
-  const [enchancedAudio, setEnchancedAudio] = useState("");
   const [loading, setLoading] = useState(false);
-  const [AIresponse, setAIresponse] = useState(""); // Define AIresponse
-  const [score, setScore] = useState(0); // Define score
+
 
   const processAudio = () => {
-    setLoading(true); // Set loading before request starts
+    if (!file) {
+      alert("Please select a file first.");
+      return;
+    }
+
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append("audio", file);
 
     axios
-      .post("http://localhost:5000/UploadAudio", {
-        response: AIresponse,
-        score: score,
+      .post("http://localhost:5000/UploadAudio", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((response) => {
-        console.log(response.data);
+        console.log("Server Response:", response.data);
+        // You can handle response here (like setting enhanced audio or score)
       })
       .catch((error) => {
-        console.error("Error submitting feedback:", error);
+        console.error("Error uploading audio:", error);
       })
       .finally(() => {
-        setLoading(false); // Reset loading state after request completes
+        setLoading(false);
       });
   };
 
   return (
     <div className="Audio-Container">
       <h2>Audio Enhancer</h2>
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0])} />
       <button onClick={processAudio} disabled={loading}>
         {loading ? "Processing..." : "Upload Audio"}
       </button>

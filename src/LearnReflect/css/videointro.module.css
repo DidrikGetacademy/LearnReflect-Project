@@ -1,0 +1,62 @@
+.video-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 2;
+}
+
+.Intro-video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.video-intro video {
+  object-fit: cover;
+  justify-content: center;
+  object-fit: cover;
+  position: fixed;
+  left: 45%;
+  top:40%
+}
+
+@media (max-width: 768px) {
+  .video-intro video {
+    object-fit: contain; 
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1; 
+}
+
+.image-1{
+height: 500px;
+width: 500px;
+display: flex;
+z-index: 2;
+position: relative;
+}
+
+.image-2{
+  height: 500px;
+  width: 500px;
+  display: flex;
+  z-index: 2;
+  position: relative;
+
+}

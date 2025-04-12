@@ -1,0 +1,317 @@
+.backgroundImg {
+  background-image: url('../Images/8kbackgroundmenubar.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -3;
+}
+
+.toggleBtn {
+  margin-top: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+
+.MenuContainer {
+  width: 100%;
+  height: 75px;
+  background-color: black;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  gap: 15px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.MenuContainer button {
+  flex: 1;
+  height: 90%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.MenuContainer button:hover {
+  background-color: #222;
+  color: #00ffcc;
+  border-color: #00ffcc;
+  cursor: pointer;
+}
+
+.pageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+}
+
+.slidePage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.slidePage.active {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+.page {
+  padding: 2rem;
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.Intro-Container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100vh;
+    align-items: center;
+    width: 100vw;
+    padding-top: 20px; 
+  }
+  
+  .Intro-Name {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .bio-Intro {
+    text-align: center;
+    text-decoration: wavy;
+    max-width: 600px; 
+    color: white;
+  }
+  
+  .top-NavigationIcon {
+    display: flex;
+    flex-direction: column;  
+    top:25px;
+    align-items: center;  
+    justify-content: center; 
+    width: 100%; 
+    position: absolute;
+  }
+  
+  .bottom-NavigationIcon {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center; 
+    width: 100%; 
+    padding-bottom: 20px;  /* Remove this padding, as it's no longer at the bottom */
+  }
+  
+  .bottom-NavigationIcon ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+    text-align: center; 
+    color: white;
+  }
+  
+  .ProfilePitchure{
+    width: auto;
+    height: 40vh;
+    margin: 20px auto 0 auto; 
+    border-radius: 12px;
+    box-shadow: 0 0 15px 5px rgba(0, 162, 255, 0.6);
+  }
+  
+  .Title {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .extra-site {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: height 2s ease; 
+  
+  }
+  
+  .extra-site.top {
+    top: 0;
+    transform-origin: top;
+    animation: openTop 2s forwards;
+  
+  
+  }
+  
+  .extra-site.bottom {
+    bottom: 0;
+    width: 100%;
+    transform-origin: bottom;
+    animation: openBottom 2s forwards;
+  }
+  
+  .content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards 2s;
+    z-index: 2;
+    position: relative;
+    color: rgb(255, 0, 0);
+  }
+  
+  @keyframes openTop {
+    0% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(0);
+    }
+  }
+  
+  @keyframes openBottom {
+    0% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  p{
+    font-size:x-large;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .work-Section {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    min-height: 100vh;  /* ensures the section covers at least the full viewport height */
+    background-color: black;
+    color: white;
+    transition: bottom 2s ease;
+  }
+  
+  
+  .work-Section.visible {
+    bottom: 0; 
+  }
+  
+  
+  .topButton {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(0%) rotate(180deg);
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .bottomButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(0%);
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .work-Content {
+    position: relative;
+    height: 100%;
+  }
+  
+  /* Remove duplicate NavigationImage styles and keep only one */
+  .NavigationImage {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 60px;
+    z-index: 3;
+    transition: transform 0.3s ease;
+  }
+  
+  .NavigationImage:hover {
+    transform: scale(1.1);
+  }
+  
+  .h1-WorkSection{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    position: relative;
+    top: 100px;
+  }
