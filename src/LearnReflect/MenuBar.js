@@ -38,7 +38,6 @@ function IntroPage() {
 
           <div className={Styles["bio-Intro"]}>
             <br />
-            <img alt="SelfDevelopment" className="" src={VideoIntro} />
             <VideoIntro />
           </div>
         </div>

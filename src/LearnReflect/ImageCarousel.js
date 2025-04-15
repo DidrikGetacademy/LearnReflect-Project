@@ -11,7 +11,7 @@ import SoftwareIMG7 from '../LearnReflect/Images/app7.png'
 import SoftwareIMG8 from '../LearnReflect/Images/app8.png'
 import SoftwareIMG9 from '../LearnReflect/Images/app9.png'
 import SoftwareIMG10 from '../LearnReflect/Images/app10.png'
-import './Css/imageCarousal.css';
+import Styles from  './Css/imageCarousal.module.css';
 const images = [SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG3,SoftwareIMG4,SoftwareIMG5,SoftwareIMG6,SoftwareIMG7,SoftwareIMG8,SoftwareIMG9,SoftwareIMG10];
 
 function ImageCarousel() {
@@ -36,13 +36,13 @@ function ImageCarousel() {
 
     return (
         <div>
-            <div className="Image-Scroll">
-                <div className="image-container">
-                    <img className="SoftWareImg" src={images[currentindex]} alt="SoftwareIMG" />
+            <div className={Styles["Image-Scroll"]}>
+                <div className={Styles["image-container"]}>
+                    <img className={Styles["SoftWareImg"]} src={images[currentindex]} alt="SoftwareIMG" />
                 </div>
-                <div className="navigation-buttons">
-                    <button className="nav-button"  onClick={prevImage}>←</button> 
-                    <button className="nav-button"   onClick={nextImage}>→</button> 
+                <div className={Styles["navigation-buttons"]}>
+                    <button className={Styles["nav-button"]}  onClick={prevImage}>←</button> 
+                    <button className={Styles["nav-button"]}    onClick={nextImage}>→</button> 
                 </div>
             </div>
         </div>

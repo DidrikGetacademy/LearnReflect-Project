@@ -26,7 +26,11 @@ const MenuComponent = ({ handleScrollToPage }) => {
         alt="menu arrow"
         className={Styles.NavigationImage}
         onClick={toggleMenu}
-        style={{ transform: isMenuOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
+        style={{ 
+          transform: isMenuOpen ? 'rotate(0deg)' : 'rotate(180deg)',
+          top: isMenuOpen ? undefined : '10px',
+          position: isMenuOpen ? undefined : 'absolute',
+         }}
       />
     </>
   );

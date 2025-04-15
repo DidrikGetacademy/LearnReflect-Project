@@ -6,7 +6,18 @@
     overflow: hidden;
   
 }
-
+.AISoftware-Container{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display:flex;
+    top:25%
+}
 
 .navigation-buttons {
     display: flex;

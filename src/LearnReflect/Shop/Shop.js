@@ -1,5 +1,5 @@
 // Refactored Shop.js with CSS Modules support
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Product from "./Product";
 import ShoppingCart from "./ShoppingCart";
 import LR from "./images/LRe.png";
@@ -8,18 +8,14 @@ import women from "./images/shopwomen.avif";
 import men from "./images/working.webp";
 import cart2 from "./images/cart2.png";
 import search from "./images/search.png";
-import Styles from "../Css/shop.module.css"; // <-- Scoped CSS module import
+import Styles from "../Css/shop.module.css";
 
 function ShopPage() {
   const [showInput, setShowInput] = useState(false);
-  const [animate, setAnimate] = useState(false);
   const [cart, setOpenCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [counts, setCounts] = useState({});
 
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
 
   const addProductToCart = (product) => {
     const existingProduct = cartItems.find((item) => item.id === product.id);
@@ -47,7 +43,7 @@ function ShopPage() {
   };
 
   return (
-    <div className={`${Styles["shop-page"]} ${animate ? Styles["animate"] : ""}`}>
+   <div>
       <div className={Styles.LabelContainer}>
         <Link to="/">
           <img alt="" className={Styles["LR-Logo"]} src={LR} />
@@ -81,31 +77,31 @@ function ShopPage() {
             style={{ display: showInput ? "block" : "none" }}
             onMouseEnter={() => setShowInput(true)}
             onMouseLeave={() => setShowInput(true)}
-          />
+            />
           <img
             alt="search"
             onMouseEnter={() => setShowInput(true)}
             onMouseLeave={() => setShowInput(false)}
             src={search}
-          />
+            />
           <img
             alt="cart"
             className={Styles.cartimg}
             onClick={() => setOpenCart(!cart)}
             src={cart2}
-          />
+            />
           {cart && (
             <ShoppingCart
-              setOpenCart={setOpenCart}
-              items={cartItems}
-              removeItem={removeCartItem}
-              counts={counts}
-              updateCounts={setCounts}
+            setOpenCart={setOpenCart}
+            items={cartItems}
+            removeItem={removeCartItem}
+            counts={counts}
+            updateCounts={setCounts}
             />
           )}
+        <div>
         </div>
       </div>
-      <div>
         <img alt="WomenImg" className={Styles.womenImg} src={women} />
         <img alt="MenImg" className={Styles.menImg} src={men} />
       </div>

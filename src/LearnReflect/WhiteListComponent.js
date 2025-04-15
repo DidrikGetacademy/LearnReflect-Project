@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Css/Whitelist.css";
-function Whitelist() {
+function WhitelistComponent() {
   const [EmailInput, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [EmailConfirmation, setEmailConfirmation] = useState(false);
@@ -100,4 +100,4 @@ function Whitelist() {
   );
 }
 
-export default Whitelist;
+export default WhitelistComponent;
