@@ -1,435 +1,311 @@
-.shop-page.animate .wall-top {
-  
-    animation: openWallsBottom 2s ease-out forwards; /* Apply animation */
-  }
-  
-  .shop-page.animate .wall-bottom {
-    animation: openWallsTop 2s ease-out forwards; /* Apply animation */
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
   }
 
-  .LabelContainer .active {
-    color: blue;
+  h1, h2, h3 {
+    font-size: 1.2rem;
   }
-  
-  
-  .LabelContainer label:hover {
-    color: white; 
-  }
-  
+}
 
-  .dropdownShop {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdownShop-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 50vh; /* Set width to 40% */
-    height: 40vh; /* Set height to 15% */
-    top: calc(100% + 18px); /* Place the dropdown below the container with some spacing */
-    left: 0; /* Align with the left side of the container */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: start;
-    overflow: hidden;
-    border: 1.4px solid whitesmoke;
-  }
-
-  .dropdownShop-content a {
-    color: black;
-    padding: 12px 0; /* Adjust padding to your preference */
-    text-decoration: none;
-    display: block; /* Ensure each item takes up a full row */
-    width: 100%; /* Make each dropdown item full width */
-    text-align: center; /* Center the text horizontally */
-    z-index: 4;
-  }
-  
-  .dropdownShop:hover .dropdownShop-content {
-    display: block;
-  }
-  
-  
-  .boxseca {
-    position: relative;
-    display: flex;
-    padding-inline-start: 25px;
-    left: 50px;
-    cursor: pointer;
-  }
-
-
-  .boxseca input {
-    width: 250px;
-    right:240px;
-    height: 3vh;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    
-    }
-    .boxseca img:first-child {
-      position: fixed;
-      margin-left: 50px; 
-    
-    }
-    /* Show input on hover */
-    .boxseca:hover input {
-      display: block;
-      position: fixed;
-    }
-
-    .SearchInput{
-        text-align: center;
-        justify-content: center;
-        font-size: medium;
-        position: fixed;
-        }
-      
-        .cartimg{
-  
-            cursor: pointer;
-          }
-          
-
-          .Product-cart {
-            width: 750px;
-            height: 750px;
-          background-color: grey;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            color: white; /* Ensures text is visible on black background */
-            cursor: pointer;
-          }
-          
-          
-          .productcard-img{
-          width: 25vh;
-          display: flex;
-          }
-
-
-          .womenImg{
-            position: absolute;
-            z-index: 2;
-            height: 60%;
-            width: 50%;;
-            left: 0;
-            }
-            .menImg{
-            position: absolute;
-            right: 0;
-            z-index: 2;
-            height: 60%;
-            width: 50%;;
-            }
-
-  
-            .product {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                z-index: 3;
-              }
-              
-              .product p {
-              top: 7.5px;
-              align-items: center;
-              text-align: center;
-              z-index: 3;
-              
-              }
-              
-              .product button {
-              bottom: 25px;
-              width: 100%;
-              bottom: 0;
-              z-index: 3;
-              }
-              
-              .product{
-                border: 2px solid lightgrey;
-                width: 260px;
-                height:400px;
-                position: relative;
-                top:50vh;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                z-index: 2;
-                margin: 100px;
-                }
-              
-                .product-page {
-                  display: flex;
-                  flex-wrap: wrap; /* New: Allow items to wrap to the next line */
-                  align-items: center;
-                  text-align: center;
-                  padding: 15px;
-                  z-index: 1;
-                  justify-content: flex-start;
-                }
-                
-
-                .LabelContainer{
-                    z-index: 3;
-                    display: flex;
-                    width: 100vw;
-                    height: 6%;
-                    background-color: lightgrey;
-                    font-size: large;
-                    font-style: italic;
-                    position: relative;
-                    text-align: center;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    }
-
-
-                    .ProductImg {
-                        z-index: 2;
-                        width: 220px;
-                        height: 300px;
-                        align-items: center;
-                        z-index: 3;
-                        text-align: center;
-                      }
-                    
-
-
-                      
-  .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 3;
-  }
-  
-  .product p {
-  top: 7.5px;
-  align-items: center;
-  text-align: center;
-  z-index: 3;
-  
-  }
-  
-  .product button {
-  bottom: 25px;
-  width: 100%;
-  bottom: 0;
-  z-index: 3;
-  }
-  
-  .product{
-    border: 2px solid lightgrey;
-    width: 260px;
-    height:400px;
-    position: relative;
-    top:50vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 2;
-    margin: 100px;
-    }
-  
-    .product-page {
-      display: flex;
-      flex-wrap: wrap; /* New: Allow items to wrap to the next line */
-      align-items: center;
-      text-align: center;
-      padding: 15px;
-      z-index: 1;
-      justify-content: flex-start;
-    }
-    
-  
-  @keyframes openWallsTop {
-    0% {
-      height: 50%;
-      background-color: black;
-    }
-    100% {
-      height: 50vh; 
-      background-color: white; 
-    }
-  }
-  
-  @keyframes openWallsBottom {
-    0% {
-      height: 50%;
-      background-color: black; 
-    }
-    100% {
-      height: 50vh; 
-      background-color: white; 
-    }
-  }
-  
-
-  
-  .wall-top,
-  .wall-bottom {
-    background-color: black; /* Juster fargen etter behov */
-    width: 100%;
-    position: absolute;
-    left: 0;
-  }
-  
-  .wall-top {
-    top: 50%;
-  
-  }
-  
-  .wall-bottom {
-    bottom: 50%;
-  
-  }
-
-  
-
-  
-  .LR-Logo{
+.LR-Logo {
   height: 85%;
   width: 2.7%;
   left: 0;
-  top:4px;
+  top: 4px;
   position: absolute;
   border-radius: 30px;
+}
+@media (max-width: 768px) {
+  .LR-Logo {
+    width: 40px;
+    height: auto;
   }
-  
+}
 
-  
-  
-  /* Define animation */
-  @keyframes growAndShadow {
-    0% {
-      transform: scale(1);
-      box-shadow: none;
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    100% {
-      transform: scale(1.1);
-      box-shadow: none;
-    }
+.dropdownShop {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownShop-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 50vh; 
+  height: 40vh;
+  top: calc(100% + 18px); 
+  left: 0; 
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: start;
+  overflow: hidden;
+  border: 1.4px solid whitesmoke;
+}
+
+.dropdownShop-content a {
+  color: black;
+  padding: 12px 0; 
+  text-decoration: none;
+  display: block; 
+  width: 100%; 
+  text-align: center; 
+  z-index: 4;
+}
+
+.dropdownShop:hover .dropdownShop-content {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .dropdownShop-content {
+    width: 90vw;
+    height: auto;
+    max-height: 40vh;
   }
-  
-  /* Apply animation to logo image on hover */
-  .LR-Logo:hover {
-    animation: growAndShadow 3s ease-out infinite; /* Apply the animation */
-  }
-  /* Define animation */
-  @keyframes growAndShadow {
-    0% {
-      transform: scale(1);
-      box-shadow: none;
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: none;
-    }
-  }
-  
-    
-  .product-container{
-    display: flex;
-    }
-    
-  
-  .page-container {
-    position: relative; /* Add relative positioning to this container */
-    display: flex;
-  }
-  
-  
-  .priceanddescription-productcard{
-    display: grid;
+}
+
+.womenImg, .menImg {
+  position: absolute;
+  z-index: 2;
+  height: 60%;
+  width: 50%;
+}
+.womenImg { left: 0; }
+.menImg { right: 0; }
+
+@media (max-width: 768px) {
+  .womenImg, .menImg {
     position: relative;
-    top: 30px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    }
-    
-    
-    .page-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; /* Full viewport height */
-    }
-    .Cart-Container {
-      position: fixed;
-      top: 70px; /* below the nav */
-      right: 0;
-      width: 400px;
-      height: 90vh;
-      background-color: white;
-      overflow-y: auto;
-      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
-      animation: slide-in 0.3s ease-out forwards;
-    }
-    
-    @keyframes slide-in {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-    
-  
-  .ProductImg{
-    cursor: pointer;
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
   }
-  
-  .CartCloseCheckout{
-    position: absolute;
-    display: grid;
-    bottom: 0;
-    width: 100%;
-    height: 110px;
-    left:0;
+}
+
+.LabelContainer .active {
+  color: blue;
+}
+
+.LabelContainer label:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .LabelContainer {
+    flex-direction: column;
+    height: auto;
+    font-size: 1rem;
+    padding: 10px;
   }
-  
-  
-  .Checkout{
-    cursor: pointer;
-  }
-  .AddToCartButton{
-    cursor: pointer;
-  }
-  .Close{
-    cursor: pointer;
-  }
-  
-  .item{
-  width:100%;
+}
+
+.shop-page.animate .wall-top {
+  animation: openWallsBottom 2s ease-out forwards;
+}
+.shop-page.animate .wall-bottom {
+  animation: openWallsTop 2s ease-out forwards;
+}
+
+.boxseca {
+  position: relative;
+  display: flex;
+  padding-inline-start: 25px;
+  left: 50px;
+  cursor: pointer;
+}
+.boxseca input {
+  width: 250px;
+  right: 240px;
+  height: 3vh;
+  text-align: center;
+}
+.boxseca img:first-child {
+  position: fixed;
+  margin-left: 50px;
+}
+.boxseca:hover input {
+  display: block;
+  position: fixed;
+}
+
+.SearchInput {
+  text-align: center;
+  font-size: medium;
+  position: fixed;
+}
+
+.cartimg {
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+}
+
+.productcard-img {
+  width: 25vh;
+  display: flex;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid lightgrey;
+  width: 90%;
+  max-width: 750px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  position: relative;
+  top: 0;
+  z-index: 2;
+  margin: 30px auto;
+  transition: all 0.3s ease;
+}
+
+.product p, .product button {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  text-align: center;
+}
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Product-cart {
+  width: 90%;
+  max-width: 750px;
+  height: auto;
+  background-color: grey;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  cursor: pointer;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.ProductImg {
+  z-index: 3;
+  width: 220px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.LabelContainer {
+  z-index: 3;
+  display: flex;
+  width: 100vw;
+  height: 6%;
+  background-color: lightgrey;
+  font-size: large;
+  font-style: italic;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.wall-top,
+.wall-bottom {
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.wall-top { top: 50%; }
+.wall-bottom { bottom: 50%; }
+
+@keyframes openWallsTop {
+  0% { height: 50%; background-color: black; }
+  100% { height: 50vh; background-color: white; }
+}
+@keyframes openWallsBottom {
+  0% { height: 50%; background-color: black; }
+  100% { height: 50vh; background-color: white; }
+}
+
+@keyframes growAndShadow {
+  0% { transform: scale(1); box-shadow: none; }
+  50% { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+  100% { transform: scale(1); box-shadow: none; }
+}
+.LR-Logo:hover {
+  animation: growAndShadow 3s ease-out infinite;
+}
+
+.product-container {
+  display: flex;
+}
+
+.page-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.priceanddescription-productcard {
+  display: grid;
+  position: relative;
+  top: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.Cart-Container {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 400px;
+  height: 90vh;
+  background-color: white;
+  overflow-y: auto;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  animation: slide-in 0.3s ease-out forwards;
+}
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.CartCloseCheckout {
+  position: absolute;
+  display: grid;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  left: 0;
+}
+
+.Checkout,
+.AddToCartButton,
+.Close {
+  cursor: pointer;
+}
+
+.item {
+  width: 100%;
   border: 2px solid grey;
   justify-content: center;
   text-align: center;
   align-items: center;
   display: flex;
-  flex-wrap:wrap ;
-  height:9vh;
-  
-  }
+  flex-wrap: wrap;
+  height: 9vh;
+}

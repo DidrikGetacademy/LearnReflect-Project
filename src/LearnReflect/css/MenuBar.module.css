@@ -1,3 +1,20 @@
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  .MenuContainer button {
+    flex: 1 0 100%;
+  }
+}
+
+
+
+
 .backgroundImg {
   background-image: url('../Images/8kbackgroundmenubar.png');
   background-size: cover;
@@ -9,14 +26,29 @@
   align-items: center;
   z-index: -3;
 }
+@media (max-width: 768px) {
+  .backgroundImg {
+    height: auto;
+    min-height: 100vh;
+    padding: 10px;
+  }
+}
 
-.toggleBtn {
-  margin-top: 10px;
-  background-color: transparent;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
+
+.Intro-Container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin-top: auto;
+  align-items: center;
+  width: 100vw;
+}
+@media (max-width: 768px) {
+  .Intro-Container {
+    height: auto;
+    padding-bottom: 20px;
+  }
 }
 
 
@@ -60,6 +92,33 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .MenuContainer {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+  }
+
+  .MenuContainer button {
+    flex: 1 0 20%;
+    margin: 5px;
+  }
+}
+
+
+
+
+.toggleBtn {
+  margin-top: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+
+
 .pageContainer {
   position: relative;
   overflow: hidden;
@@ -96,17 +155,12 @@
 }
 
 
-.Intro-Container {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    height: 100vh;
-    align-items: center;
-    width: 100vw;
-    padding-top: 20px; 
-  }
-  
+
+
+
+
+
+
   .Intro-Name {
     display: flex;
     flex-direction: column; 
@@ -166,25 +220,16 @@
   }
   
   body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    overflow: hidden;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .container {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
   }
   
-  .container {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
   
   .extra-site {
     position: absolute;
@@ -255,18 +300,17 @@
   
   
   .work-Section {
-    position: absolute;
-    bottom: -100%;
+    position: relative;
     width: 100%;
-    min-height: 100vh;  /* ensures the section covers at least the full viewport height */
     background-color: black;
     color: white;
-    transition: bottom 2s ease;
+    transform: translateY(100%);
+    transition: transform 2s ease;
+    overflow: hidden;
   }
   
-  
   .work-Section.visible {
-    bottom: 0; 
+    transform: translateY(0%);
   }
   
   
@@ -290,13 +334,17 @@
   
   .work-Content {
     position: relative;
-    height: 100vh;
-    justify-content: center;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    display: flex;    
+    padding: 2rem;
+    box-sizing: border-box;
     text-align: center;
-    width: 100vw
   }
+  
+  
   
   /* Remove duplicate NavigationImage styles and keep only one */
   .NavigationImage {

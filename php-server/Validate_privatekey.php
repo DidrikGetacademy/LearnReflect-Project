@@ -1,7 +1,8 @@
 <?php
 ob_start();
 include 'config.php';
-
+require 'vendor/autoload.php';
+use \Firebase\JWT\JWT;
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -75,18 +76,33 @@ if ($result->num_rows > 0) {
         error_log("Updated the key's status to 'active' and increment the time_used counter");
         $conn->commit();
 
+
+        #Generation of JWT
+        $issuedat = time();
+        $expiration = strtotime($subscription_end);
+        $payload = [
+            "user_id" => $user_id,
+            "subscription_type" => $subscription_type,
+            "subscription_end" => $subscription_end,
+            "iat" => $issuedat,
+            "exp" => $expiration
+        ];
+
+
+        $jwt = JWT::encode($payload, $jwt_secret, 'HS256');
+
         #payload back too python script,
-        echo json_encode(
-[
+        echo json_encode([
                 "success" => true, 
                 "subscription_type" => $subscription_type,
-                "subscription_end" => $subscription_end
+                "subscription_end" => $subscription_end,
+                "jwt" => $jwt
                 ]);
         
-        error_log("key successfully linked to user and activated");
+        error_log("Key successfully activated and JWT returned.");
     }catch(Exception $e){
         $conn->rollback();
-        echo json_encode(["success" => false, "error" => "Failed to link key: ". $e->getMessage()]);
+        echo json_encode(["success" => false, "error" => "Transaction failed: ". $e->getMessage()]);
         error_log("Transaction failed: " . $e->getMessage());
     }
      $stmt->close();

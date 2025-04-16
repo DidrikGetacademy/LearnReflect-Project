@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Css/Whitelist.css";
+import styles from "./Css/Whitelist.module.css";
 function WhitelistComponent() {
   const [EmailInput, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -71,26 +71,30 @@ function WhitelistComponent() {
 
 
   return (
-    <div className="whitelist-container">
-      <form className="EmailForm" onSubmit={Handlesubmit}>
+    <div className={styles["Whitelist-Container"]}>
+      <form className={styles.EmailForm} onSubmit={Handlesubmit}>
         <input
           onChange={handleinput}
           type="email"
           placeholder="Email Address"
           value={EmailInput}
         />
-        <button className="submitbutton" type="submit" disabled={loading}>
+        <button className={styles.submitbutton} type="submit" disabled={loading}>
           {loading ? "Sending..." : "Get Early Access"}
         </button>
-        {Errormsg && <p className="error-message">{Errormsg}  <button>Close</button></p>}
+        {Errormsg && (
+          <p className="error-message">
+            {Errormsg} <button>Close</button>
+          </p>
+        )}
       </form>
 
       {EmailConfirmation &&
-        <div className="modal">
-          <div className="modal-content">
-            <p className="Thankyou">Congratulations!</p>
-            <p className="P-Recieved"> we will keep you updated!</p>
-            <button onClick={closeconfirmation} className="close-button">
+     <div className={styles.modal}>
+          <div className={styles["modal-content"]}>
+          <p className={styles.Thankyou}>Congratulations!</p>
+            <p className={styles["P-Recieved"]}>We will keep you updated!</p>
+            <button onClick={closeconfirmation} className={styles["close-button"]}>
               Close
             </button>
           </div>

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js"; //PayPal script is loading and can be used to change the values of the options of the PayPal script and at the same time reload the script with the updated parameters.
-import upscaled from '../LearnReflect/Images/bedre.jpg'
-import './Css/checkout.css';
+import styles from  './Css/checkout.module.css';
 import ImageCarousel from "./ImageCarousel";
 import Modal from "./RequestSubmittedModal";
 import {  useNavigate } from "react-router-dom";
@@ -152,13 +151,13 @@ function Checkout() {
 
 
     return (
-        <div style={{ display: "flex", alignItems: "center", height: "100vh", width: "100vw", justifyContent: "center", overflow: "hidden", scrollBehavior: "none"}}>
-            <img className="stuker" alt="background" src={upscaled} />
-            <div className="checkout">
+        <div style={{ display: "flex", alignItems: "center", minHeight: "100vh", width: "100vw", justifyContent: "center", padding: "40px 20px", boxSizing: "border-box", }}>
+
+            <div className={styles.checkout}>
                 <ImageCarousel />
-                <div className="payment-section">
+                <div className={styles.paymentSection}>
                     <label>Please choose a payment method below</label>
-                    <select value={subscriptiontype} onChange={handlesubscription}>
+                        <select className={styles.selectSubscription} value={subscriptiontype} onChange={handlesubscription}>
                         <option value="monthly">Monthly (subscription) - 12.99 EUR</option>
                         <option value="permanent">Permanent (one-time) - 50.00 EUR</option>
                     </select>
@@ -166,14 +165,14 @@ function Checkout() {
                         <p>Loading...</p>
                     ) : (
                         <>
-                            <select className="currency-select" value={currency} onChange={onCurrencyChange}>
+                          <select className={styles.currencySelect} value={currency} onChange={onCurrencyChange}>
                                 <option className="option" value="USD">💵 USD</option>
                                 <option className="option" value="EUR">💶 Euro</option>
                             </select>
                         </>
                     )}
                     <label>Please write in your email for details:</label>
-                    <input onChange={handleEmailChange} type="email" placeholder="E-Mail" className="EmailInput" ref={emailref} />
+                    <input onChange={handleEmailChange} type="email" placeholder="E-Mail" className={styles.EmailInput} ref={emailref} />
                     <PayPalButtons
                         style={{ layout: "vertical" }}
                         createOrder={(data, actions) => onCreateOrder(data, actions)}

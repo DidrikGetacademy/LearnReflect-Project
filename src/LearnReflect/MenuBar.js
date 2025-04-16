@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Styles from "./Css/MenuBar.module.css";
-import Whitelist from '../LearnReflect/PageComponent';
+import Whitelist from './Whitelistpage';
 import ContactNavBar from '../LearnReflect/Contact.js';
 import ShopPage from "../LearnReflect/Shop/Shop";
-import AISoftware from "./AiSoftware";
 import SelfDevelopment from '../LearnReflect/LearnReflect Discipline/SelfDevelopment';
 import LRAgent from '../LearnReflect/AI-LearnReflect/Chat/LRAgent';
 import VideoIntro from "./VideoIntro";
 import MenuComponent from "./Components/MenuComponent";
+import Payment from "./payment";
+
 
 function IntroPage() {
+
   const [sectionVisible, setSectionVisible] = useState(false);
   const [activePage, setActivePage] = useState(null);
   
@@ -20,7 +22,12 @@ function IntroPage() {
     setTimeout(() => {
       const pageSection = document.getElementById("page-section");
       if (pageSection) {
-        pageSection.scrollIntoView({ behavior: "smooth" });
+        const scrollContainer = document.getElementById("scroll-container");
+        if (scrollContainer) {
+          scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        
+        
       }
     }, 100);
   };
@@ -36,10 +43,12 @@ function IntroPage() {
 
           <MenuComponent handleScrollToPage={handleScrollToPage} />
 
-          <div className={Styles["bio-Intro"]}>
+          {!activePage && (
+            <div className={Styles["bio-Intro"]}> 
             <br />
             <VideoIntro />
           </div>
+          )}
         </div>
       </div>
 
@@ -52,7 +61,7 @@ function IntroPage() {
             <div id="page-section">
               {activePage === "self-dev" && <SelfDevelopment />}
               {activePage === "shop" && <ShopPage />}
-              {activePage === "Ai Software" && <AISoftware />}
+              {activePage === "Ai Software" && <Payment />}
               {activePage === "Ai Agent" && <LRAgent />}
               {activePage === "Contact" && <ContactNavBar />}
               {activePage === "whitelist" && <Whitelist />}

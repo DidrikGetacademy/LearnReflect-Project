@@ -24,7 +24,7 @@ if($conn->connect_error){
 $data = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($data['user_id'])) {
-    echo json_encode(["error" => "User ID is required"]);
+    echo json_encode(value: ["error" => "User ID is required"]);
     error_log("User ID is missing in request from VideoEnchancer");
     exit;
 }

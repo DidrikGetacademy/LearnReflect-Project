@@ -1,28 +1,19 @@
 import React from "react";
-import "./Css/PreRealse.css";
-import AI1 from "./Images/AI1.png";
-import LComponent from "../LearnReflect/LogoComponent";
-import Whitelist from "./WhiteListComponent"; 
-import Bottomnavbar from "./BottomNavbar";
-import LRlogo from '../LearnReflect/Images/12.png';
-
+import WhitelistComponent from "./WhiteListComponent"; 
+import styles from "./Css/Whitelist.module.css";
 function WhitelistPage() {
   return (
-    <div className="pagecomponent">
-      <div className="scroll-page">
-        <h3>LearnReflect's under Development</h3>{" "}
-        <div className="PreReleaseContainer">
-          <div c className="scroll-container">
-            <h1 class="HomeTopTitle">
+    <div className={styles.pagecomponent}>
+      <div className={styles.scrollPage}>
+        <div className={styles.preReleaseContainer}>
+          <div className={styles.scrollContainer}>
+          <h1 className={styles.homeTopTitle}>
               {" "}Empowering Your Self-Development Journey with Cutting-Edge AI
             </h1>
-
-            <img className="LR-LOGO" src={LRlogo} alt="LR-Logo"/>
-            <div className="Whitelist">
-              <Whitelist />
+            <div className={styles.whitelist}>
+              <WhitelistComponent />
             </div>
-            <LComponent />
-            <div className="LearnReflect">
+            <div className={styles.learnReflect}>
               <p>
                 LearnReflect is a cutting-edge self-improvement platform that
                 harnesses the power of AI<br/> To help - Assist & guide you to
@@ -53,8 +44,6 @@ function WhitelistPage() {
                 your self-improvement journey. Stay tuned for exciting
                 offerings!
               </p>
-              <img className="AI1" alt="AI4" src={AI1} />
-              <Bottomnavbar />
             </div>
           </div>
         </div>

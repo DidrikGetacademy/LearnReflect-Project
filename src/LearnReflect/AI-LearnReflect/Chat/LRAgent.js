@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../../Css/ChatbotInterface.css";
-
+import styles from "../../Css/ChatbotInterface.module.css";
+import AGENTimg from "../../Images/AI1.png"
 
 
 
@@ -145,57 +145,62 @@ function LRAgent() {
   
 
   return (
-    <div className="chat-container">
-      <div className="messages-container">
-        {conversationHistory
-          .filter(msg => msg.role !== 'system') 
-          .map((msg, index) => (
-            <div key={index} className={`message ${msg.role === 'user' ? 'user' : 'bot'}`}>
-              <div className="avatar">
-                {msg.role === 'user' ? (
-                  <img src="user-avatar.png" alt="User" className="avatar-img" />
-                ) : (
-                  <img src="bot-avatar.png" alt="AI Assistant" className="avatar-img" />
-                )}
+    <div className={styles["chat-container"]}>
+      <div className={styles["chat-main"]}>
+        <div className={styles["messages-container"]}>
+          {conversationHistory
+            .filter(msg => msg.role !== 'system')
+            .map((msg, index) => (
+              <div
+                key={index}
+                className={`${styles.message} ${msg.role === "user" ? styles.user : styles.bot}`}
+              >
+                <div className={styles.avatar}>
+                  <img
+                    src={msg.role === "user" ? "user-avatar.png" : "bot-avatar.png"}
+                    alt={msg.role === "user" ? "User" : "AI Assistant"}
+                    className={styles["avatar-img"]}
+                  />
+                </div>
+                <div className={styles["message-content"]}>{msg.content}</div>
               </div>
-              <div className="message-content">
-                {msg.content}
+            ))}
+          {loading && (
+            <div className={`${styles.message} ${styles.bot}`}>
+              <div className={styles.avatar}>
+                <img src={AGENTimg} alt="AI Assistant" className={styles["avatar-img"]} />
+              </div>
+              <div className={styles["typing-indicator"]}>
+                <div className={styles["typing-dot"]}></div>
+                <div className={styles["typing-dot"]}></div>
+                <div className={styles["typing-dot"]}></div>
               </div>
             </div>
-          ))}
-        {loading && (
-          <div className="message bot">
-            <div className="avatar">
-              <img src="bot-avatar.png" alt="AI Assistant" className="avatar-img" />
-            </div>
-            <div className="typing-indicator">
-              <div className="typing-dot"></div>
-              <div className="typing-dot"></div>
-              <div className="typing-dot"></div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div className="input-container">
-        <div className="input-wrapper">
+          )}
+        </div>
+  
+        <div className={styles["input-wrapper"]}>
           <textarea
-            className="chat-input"
+            className={styles["chat-input"]}
             placeholder="Ask LR-ChatAssistant"
             value={Usermessage}
             onChange={e => setUsermessage(e.target.value)}
             disabled={loading}
           />
-          <button className="send-button" onClick={RequestAssistantResponse} disabled={loading}>
+          <button
+            className={styles["send-button"]}
+            onClick={RequestAssistantResponse}
+            disabled={loading}
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
             </svg>
           </button>
         </div>
       </div>
-
-      <div className="Feedback-Container">
-        <div className="feedback-buttons">
+  
+      <div className={styles["Feedback-Container"]}>
+        <div className={styles["feedback-buttons"]}>
           <button onClick={() => handleFeedback(1)} disabled={feedbackSubmitted || loading}>
             👍 Positive
           </button>
@@ -215,5 +220,5 @@ function LRAgent() {
       </div>
     </div>
   );
-}
+}  
 export default LRAgent;

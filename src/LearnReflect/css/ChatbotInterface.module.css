@@ -1,0 +1,307 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+}
+
+/* Chat container */
+.chat-container {
+  min-width: 75vw;
+  margin: 0 auto;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  padding: 16px;
+  gap: 20px;
+  border-radius: 12px;
+}
+
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+}
+
+
+.messages-container {
+  flex: 1;
+  overflow-y: visible;
+  padding: 0 10px;
+
+  background-color: grey;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-container {
+    padding: 12px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .feedback-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feedback-buttons button {
+    width: 100%;
+  }
+}
+
+/* Message bubbles */
+.message {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  word-wrap: break-word;
+}
+
+.message.user {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .avatar {
+  background-color: #10a37f;
+}
+
+.bot .avatar {
+  background-color: #d1d5db;
+}
+
+.message-content {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  max-width: calc(100% - 55px);
+}
+
+.user .message-content {
+  background-color: #10a37f;
+  color: white;
+  border-radius: 8px 8px 0 8px;
+}
+
+.bot .message-content {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px 8px 8px 0;
+}
+
+/* Input */
+.input-container {
+  display: none;
+}
+.input-wrapper {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.chat-input {
+  width: 100%;
+  padding: 12px 45px 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: none;
+  min-height: 44px;
+  max-height: 200px;
+  line-height: 1.5;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #10a37f;
+  box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.1);
+}
+
+/* Send button */
+.send-button {
+  position: absolute;
+  right: -16%;
+  top: 0%;
+  background: whitesmoke;
+  border: none;
+  cursor: pointer;
+  color: #10a37f;
+  padding: 4px;
+}
+
+/* Typing animation */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+@keyframes typing {
+  0%, 40%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-4px); }
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Feedback Section */
+.Feedback-Container {
+  padding: 20px;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.Feedback-Container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-height: 80px;
+}
+
+.feedback-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.feedback-buttons button {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;          /* 👈 Smaller font size */
+  font-weight: 500;         /* 👈 Optional: keeps it readable */
+  white-space: nowrap;      /* 👈 Prevent text from wrapping weirdly */
+  text-align: center;
+  min-width: 100px;         /* 👈 Keep a consistent width on small screens */
+}
+
+.feedback-buttons button:hover {
+  background: #f7f7f7;
+}
+
+
+
+.Feedback-Container button {
+  font-size: 14px;          /* 👈 Also for "Submit feedback" button */
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #10a37f;
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.Feedback-Container button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  .chat-container {
+    height: auto;
+    padding-bottom: 120px;
+  }
+
+  .messages-container {
+    padding: 10px;
+  }
+
+  .message {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .message.user {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .avatar {
+    margin-bottom: 5px;
+  }
+
+  .input-container {
+    padding: 10px;
+  }
+
+  .input-wrapper {
+    max-width: 100%;
+  }
+
+  .Feedback-Container {
+    padding: 15px;
+  }
+
+  .feedback-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feedback-buttons button {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .feedback-buttons button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}

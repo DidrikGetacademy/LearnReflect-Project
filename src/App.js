@@ -1,10 +1,10 @@
 import React from "react";
 import './LearnReflect/Css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route  } from 'react-router-dom';
 import CountDown from "./LearnReflect/Countdown_prerealse/CountDown";
 import SelfDevelopment from "./LearnReflect/LearnReflect Discipline/SelfDevelopment";
-import WhitelistPage from './LearnReflect/PageComponent';
+import WhitelistPage from './LearnReflect/Whitelistpage';
 import MenuBar from './LearnReflect/MenuBar';
 import ContactNavBar from './LearnReflect/Contact'; 
 import Payment from './LearnReflect/payment';
@@ -27,18 +27,20 @@ import Timer from "./LearnReflect/Components/TimerComponent.js";
 import Inspire from "./LearnReflect/Inspire/Inspire.js";
 import RegistrationForm from "./LearnReflect/User/UserRegistration.js";
 import LRAgent from "./LearnReflect/AI-LearnReflect/Chat/LRAgent.js";
-import AudioEnchancerJSX from "./LearnReflect/AI-LearnReflect/Audio/AudioRender.js";
-import VideoEnchancerJSX from "./LearnReflect/AI-LearnReflect/Video/VideoRender.js";
 import PrivacyPolicy from "LearnReflect/PrivacyPolicy";
+import Layout from "./LearnReflect/Components/layout";
+
+
+
 function App() {
+
   return (
       <AuthProvider>
         <Routes>
+          <Route element={<Layout/>}>
           <Route path="/" element={<MenuBar />} />
           <Route path="/Landingpage" element={<LandingPage />} />
           <Route path="/LRAgent" element={<LRAgent />} />
-          <Route path="/AudioEnchancer" element={<AudioEnchancerJSX />} />
-          <Route path="/VideoEnchancerJSX" element={<VideoEnchancerJSX />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/Register" element={<RegistrationForm />} />
           <Route path="/Timer" element={<Timer />} />
@@ -59,7 +61,7 @@ function App() {
                 <Futures />
               </PrivateRouteFuture>
             }
-          />
+            />
           <Route path="/ShopPage" element={<ShopPage />} />
           <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/Completion" element={<Completion />} />
@@ -70,7 +72,7 @@ function App() {
                 <Dashboard />
               </PrivateRoute>
             }
-          />
+            />
           <Route
             path="/Admin"
             element={
@@ -78,8 +80,9 @@ function App() {
                 <Admin />
               </AdminRoute>
             }
-          />
+            />
 
+            </Route>
         </Routes>
       </AuthProvider>
   );

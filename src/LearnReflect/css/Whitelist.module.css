@@ -1,0 +1,354 @@
+html, body {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.pagecomponent {
+  padding-top: 100px; /* adjust based on your header/menu height */
+}
+
+
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  max-width: 80%;
+  box-shadow: 0 0 20px 5px rgba(225, 241, 0, 0.8),
+    0 0 40px 10px rgba(0, 255, 128, 0.8), 0 0 60px 15px rgba(0, 0, 255, 0.8);
+}
+
+.modal {
+  display: block;
+  position: relative;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+.P-Recieved {
+  color: lightgrey;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+}
+
+.close-button {
+  width: 100%;
+  height: 25%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+label {
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.EmailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.submitbutton {
+  width: 100%;
+  height: auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitbutton:hover {
+  background-color: #0056b3;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: lightgrey;
+  color: black;
+} 
+
+label {
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+p {
+  color: #dbdada;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  line-height: 1.4;
+  padding: 8px 12px;
+  max-width: 680px;
+  margin: 12px auto;
+}
+
+
+.Whitelist-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+    overflow-y: hidden;
+  }
+
+
+
+.P-Early{
+  color: white;
+}
+p.Thankyou{
+  color: grey;
+}
+
+.pagecomponent {
+  background-color: black;
+  opacity: 0.95;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+
+
+.scroll-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.scroll-page .selectsize {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  
+}
+
+
+.PreReleaseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;}
+
+.scroll-container {
+  height: auto;
+  max-height: none;
+  overflow-y: visible;
+  padding: 120px 0 60px;
+}
+
+
+
+
+
+.scroll-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-controls button {
+  margin: 0 0px; 
+  width: 110px;
+}
+
+
+
+
+h1.HomeTopTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-top: 60px;
+
+  position: relative;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+
+  background: linear-gradient(90deg, #ff0000, #0084ff, white, red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 0, 0, 0.2);
+
+}
+
+.LR-LOGO {
+  width: 150px;
+  height: auto;
+  margin-top: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.LearnReflect {
+  margin-top: 60px;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+
+
+
+
+img.AI1 {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 30px 0;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .PreReleaseContainer {
+    padding: 20px;
+  }
+
+  h1.HomeTopTitle {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    top: 10px;
+  }
+
+  img.AI1 {
+    height: auto;
+    width: 90%;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+h3 {
+  color: grey;
+  z-index: 2;
+  font-size: clamp(1.5rem, 5vw, 3em); 
+  position: relative;
+  margin-top: 2px;
+
+  display: flex;
+  text-align: center; 
+  font-size: x-large;
+  justify-content: center;
+  font-style: italic  ;
+}
+
+
+
+h2 {
+  color: white;
+  z-index: 2;
+  position: relative;
+  top: 5vh;
+  font-size: 3em;
+  font-style: italic;
+  color: grey;
+  display: flex;
+}
+
+
+
+
+
+
+.Whitelist {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: auto; /* Increased vertical spacing */
+}
+@media (max-width: 768px) {
+  .Whitelist {
+    margin: 25px 0; /* Adjust for smaller screens */
+  }
+}
+
+
+.P-EarlyAccess{
+  color: grey;
+  width: 375px;
+  font-size: large;
+}
+
+
+.Donation{
+
+
+}
+
+
+.Donation-button{
+  border-radius: 30px;
+  height: 80px;
+  width: 50vh;
+  text-align: center;
+  font-size: 1.7em;
+  background-color: black;
+  color: white;
+  border-color: white;
+  margin: 2px solid white
+  ;
+}
+
+
