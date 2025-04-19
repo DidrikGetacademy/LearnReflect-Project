@@ -1,30 +1,38 @@
 {
   "files": {
-    "main.css": "/static/css/main.c7f61c2c.css",
-    "main.js": "/static/js/main.88751b4b.js",
+    "main.css": "/static/css/main.f5d4b822.css",
+    "main.js": "/static/js/main.23dc1909.js",
     "static/media/8kbackgroundmenubar.png": "/static/media/8kbackgroundmenubar.88e8a938f7eddf1e497a.png",
     "static/media/AI1.png": "/static/media/AI1.e64f1f9051446c24cc5a.png",
     "static/media/Oppskalert2.png": "/static/media/Oppskalert2.9c511a739a58149e126a.png",
     "static/media/Oppskalert1.png": "/static/media/Oppskalert1.fbf0d0d3e27bc644de4e.png",
     "static/media/imageintro.mp4": "/static/media/imageintro.7ca4def7d0d82028d46b.mp4",
     "static/media/toolwindow.png": "/static/media/toolwindow.b456038bceea525551ea.png",
+    "static/media/software3.png": "/static/media/software3.c90ac050e8606755c503.png",
+    "static/media/youtube downloader.png": "/static/media/youtube downloader.912ea4146178f8d5919b.png",
     "static/media/Arrow2.png": "/static/media/Arrow2.96e8df719a14ee871029.png",
     "static/media/videoenchancer.png": "/static/media/videoenchancer.803dd83bf308812f6ff8.png",
     "static/media/introframe.jpg": "/static/media/introframe.713c3d13300f737a39fe.jpg",
     "static/media/working.webp": "/static/media/working.adbd6a6bcbf87934f5ef.webp",
     "static/media/4.jpg": "/static/media/4.24c738fa2beb1836f2ba.jpg",
+    "static/media/mediainfoanalyst.png": "/static/media/mediainfoanalyst.f55c83afcaa55255597a.png",
     "static/media/xx.png": "/static/media/xx.97d93d72dca3b8e208e7.png",
+    "static/media/LRAGENT.png": "/static/media/LRAGENT.54fe2fe1ebe0941ea17d.png",
     "static/media/shopwomen.avif": "/static/media/shopwomen.471f5bcaa5c9aea987d8.avif",
+    "static/media/software7.png": "/static/media/software7.23219409bec1f256d19d.png",
     "static/media/palglg Men.jpg": "/static/media/palglg Men.2b01bed7f4a9164ad8fc.jpg",
+    "static/media/socialmediaupload.png": "/static/media/socialmediaupload.193e6fff5dd0ef77086c.png",
+    "static/media/selectedfiles.png": "/static/media/selectedfiles.3648d05e52850a7cd23b.png",
     "static/media/app10.png": "/static/media/app10.501434f899bb2c8ec620.png",
     "static/media/Lion.jpg": "/static/media/Lion.16c0b0e9e0057257fa9b.jpg",
+    "static/media/toolslist.png": "/static/media/toolslist.068623a4647409767528.png",
     "static/media/hoodie2.jpg": "/static/media/hoodie2.e7cccf96f294da4928c7.jpg",
     "index.html": "/index.html",
-    "main.c7f61c2c.css.map": "/static/css/main.c7f61c2c.css.map",
-    "main.88751b4b.js.map": "/static/js/main.88751b4b.js.map"
+    "main.f5d4b822.css.map": "/static/css/main.f5d4b822.css.map",
+    "main.23dc1909.js.map": "/static/js/main.23dc1909.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7f61c2c.css",
-    "static/js/main.88751b4b.js"
+    "static/css/main.f5d4b822.css",
+    "static/js/main.23dc1909.js"
   ]
 }

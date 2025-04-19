@@ -7,7 +7,7 @@ import SoftwareIMG10 from '../LearnReflect/Images/app10.png';
 import socialmediauploadIMG from '../LearnReflect/Images/socialmediaupload.png';
 import software7 from '../LearnReflect/Images/software7.png';
 import software3 from '../LearnReflect/Images/software3.png';
-import youtubedownloaderIMG from '../LearnReflect/Images/software.png';
+import youtubedownloaderIMG from '../LearnReflect/Images/youtube downloader.png';
 import selectedfilesimg from '../LearnReflect/Images/selectedfiles.png';
 import mediainfoanalyst from '../LearnReflect/Images/mediainfoanalyst.png';
 import LRAGENTIMG from '../LearnReflect/Images/LRAGENT.png'

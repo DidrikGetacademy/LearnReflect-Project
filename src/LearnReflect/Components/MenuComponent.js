@@ -11,8 +11,9 @@ const MenuComponent = ({ handleScrollToPage }) => {
 
   return (
     <>
-      {isMenuOpen && (
-        <div className={Styles.MenuContainer}>
+
+       <div className={`${Styles.MenuContainer} ${isMenuOpen ? Styles.open : Styles.closed}`}>
+          
           <button onClick={() => handleScrollToPage("self-dev")}>LearnReflects Self Development</button>
           <button onClick={() => handleScrollToPage("shop")}>Shop</button>
           <button onClick={() => handleScrollToPage("Ai Software")}>LearnReflects AI Software</button>
@@ -20,18 +21,14 @@ const MenuComponent = ({ handleScrollToPage }) => {
           <button onClick={() => handleScrollToPage("Contact")}>Contact us</button>
           <button onClick={() => handleScrollToPage("whitelist")}>WhiteList</button>
         </div>
-      )}
-      <img
-        src={arrow}
-        alt="menu arrow"
-        className={Styles.NavigationImage}
-        onClick={toggleMenu}
-        style={{ 
-          transform: isMenuOpen ? 'rotate(0deg)' : 'rotate(180deg)',
-          top: isMenuOpen ? undefined : '10px',
-          position: isMenuOpen ? undefined : 'absolute',
-         }}
-      />
+        <img
+  src={arrow}
+  alt="menu arrow"
+  className={`${Styles.NavigationImage} ${isMenuOpen ? Styles.arrowOpen : Styles.arrowClosed}`}
+  onClick={toggleMenu}
+  style={{ transform: isMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+/>
+
     </>
   );
 };

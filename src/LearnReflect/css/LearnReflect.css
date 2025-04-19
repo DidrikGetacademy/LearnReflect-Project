@@ -242,16 +242,7 @@ h1 {
     font-size: 1em;
     font-style: initial;
   }
-  .QuoteText {
-    font-size: x-small;
-    font-style: italic;
-    text-align: justify;
-  
-    padding: 10px;
-    margin: 4px;
-    border-radius: 10px;
-    box-shadow: 7px 7px 10px rgba(13, 216, 189, .5); /* Add a shadow to the card */
-  }
+
   p {
     font-size: large;
     font-style: italic;
@@ -265,10 +256,7 @@ h1 {
   p > :not(:last-child) {
     margin-bottom: 3em; /* Adjust this value to increase or decrease the space between lines */
   }
-  
-  .menu-icon:hover {
-    transform: scale(1.1); /* Scale up the icon on hover */
-  }
+
   
   img {
     width: 100%;
@@ -425,28 +413,8 @@ h1 {
     height: 25px;
   }
   
-  .dropdown {
-    position: absolute;
-    top: 30vh;
-    right: 0px;
-    display: inline-block;
-    z-index: 1000;
-  }
-  
-  .dropdown-content {
-    position: absolute;
-    top: calc(100%); /* Position the dropdown below the icon */
-    right: 0; /* Align the dropdown to the right */
-    background-color: #111213;
-    width: auto; /* Let the width adjust to content */
-    max-width: 200px; /* Set a maximum width for the dropdown */
-    box-shadow: 0 7px 13px 0 #1bd4bb;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-end; /* Align items to the right */
-    animation: slideRight 0.5s forwards; /* Use slideRight animation */
-  }
+
+
   .size {
     padding: 9px;
     border: 1px solid light;
@@ -459,24 +427,7 @@ h1 {
     }
   }
   
-  .dropdown-content a {
-    color: white;
-    padding: 5px 16px;
-    position: relative;
-    text-decoration: none;
-    display: flex;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .menu-icon {
-    width: 35px;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-  }
+
   
   @keyframes slideRight {
     0% {
@@ -487,17 +438,6 @@ h1 {
     }
   }
   
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    position: relative;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
   
   .show {
     display: block;
@@ -597,40 +537,10 @@ h1 {
     text-decoration: underline;
   }
   
-  .scroll-container {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 90%;
-    max-width: 350px;
-    height: 60vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    top: 16.8vh;
-    position: relative;
-    z-index: 3;
-  }
+
   
-  .scroll-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 95%;
-    font-size: 1em;
-    color: white;
-    z-index: 3;
-    opacity: 0;
-    animation: fadeInUp 2s ease forwards;
-    position: relative;
-  }
+
   
-  .scroll-page .selectsize {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   
   .scroll-controls {
     display: flex;
@@ -718,16 +628,7 @@ h1 {
     font-size: 1em;
     font-style: initial;
   }
-  .QuoteText {
-    font-size: x-small;
-    font-style: italic;
-    text-align: justify;
-  
-    padding: 10px;
-    margin: 4px;
-    border-radius: 10px;
-    box-shadow: 7px 7px 10px rgba(13, 216, 189, .5); /* Add a shadow to the card */
-  }
+
   p {
     font-size: large;
     font-style: italic;
@@ -742,9 +643,7 @@ h1 {
     margin-bottom: 3em; /* Adjust this value to increase or decrease the space between lines */
   }
   
-  .menu-icon:hover {
-    transform: scale(1.1); /* Scale up the icon on hover */
-  }
+
   
   img {
     width: 100%;
@@ -900,28 +799,9 @@ h1 {
     height: 25px;
   }
   
-  .dropdown {
-    position: absolute;
-    top: 30vh;
-    right: 0px;
-    display: inline-block;
-    z-index: 1000;
-  }
+
   
-  .dropdown-content {
-    position: absolute;
-    top: calc(100%); /* Position the dropdown below the icon */
-    right: 0; /* Align the dropdown to the right */
-    background-color: #111213;
-    width: auto; /* Let the width adjust to content */
-    max-width: 200px; /* Set a maximum width for the dropdown */
-    box-shadow: 0 7px 13px 0 #1bd4bb;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-end; /* Align items to the right */
-    animation: slideRight 0.5s forwards; /* Use slideRight animation */
-  }
+
   .size {
     padding: 9px;
     border: 1px solid light;
@@ -934,24 +814,9 @@ h1 {
     }
   }
   
-  .dropdown-content a {
-    color: white;
-    padding: 5px 16px;
-    position: relative;
-    text-decoration: none;
-    display: flex;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .menu-icon {
-    width: 35px;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-  }
+
+
+
   
   @keyframes slideRight {
     0% {
@@ -962,17 +827,6 @@ h1 {
     }
   }
   
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    position: relative;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
   
   .show {
     display: block;
@@ -1126,19 +980,8 @@ h1 {
     position: relative;
     top: 20px;
   }
-  
   }
-  .Homepage {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full viewport width */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   body {
     margin: 0;
     padding: 0;

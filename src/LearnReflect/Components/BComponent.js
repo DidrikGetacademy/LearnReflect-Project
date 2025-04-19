@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Styles from "../Css/LearnReflectSelfdevelopment.module.css";
 function Bcomponent(){
 return(
-<div className='button-container'>
+<div className={Styles.buttonContainer}>
         <Link to='/Homepage'>
           <button>LearnReflect</button>
         </Link>

@@ -56,14 +56,14 @@
 
 
 .image-container {
-    width: 100%;
-    height: 100%;
+    width: 100%;        
+    height: 100%;    
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
 }
+
 @media (min-width: 1200px) {
     .Image-Scroll {
         width: 80vw;
@@ -73,7 +73,7 @@
 
 .SoftWareImg {
     width: auto;
-    height: 50vh; /* ❗ This sets the image height to 50% of the viewport height */
+    height: auto;
     max-width: 50%;
     max-height: 70%;
     object-fit: contain;

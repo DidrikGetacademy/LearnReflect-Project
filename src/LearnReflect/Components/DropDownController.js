@@ -1,37 +1,39 @@
 import React, { useState } from 'react';
-import MenuIcon from '../../LearnReflect/Images/LearnReflect.jpeg'
+import MenuIcon from '../../LearnReflect/Images/menuimg.png';
 import { Link } from 'react-router-dom'; 
 import { useAuth } from './Authanciation/AuthProvider';
-import PrivateRouteMenu from './Authanciation/PrivateRoute';
+import styles from '../Css/DropdownMenu.module.css';
+
 function DropdownMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
-const { logout } = useAuth();
+  const { logout, isAuthenticated } = useAuth(); // ✅ You already have this!
 
-const toggleMenu = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
+
   return (
-    <div className='dropdown'>
-      <img src={MenuIcon} alt="MenuIcon Logo" className='menu-icon' onClick={toggleMenu} />
+    <div className={styles.dropdown}>
+      <img 
+        src={MenuIcon} 
+        alt="Menu Icon" 
+        className={styles.menuIcon} 
+        onClick={toggleMenu} 
+      />
       {isMenuOpen && (
-        <div className='dropdown-content'>
-          <PrivateRouteMenu>
-            {(isAuthenticated) => (
-              <>
-                {isAuthenticated ? (
-                  <>
-                    <Link to="/profile">Profile</Link>
-                    <Link onClick={logout}>Logout</Link>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
-                  </>
-                )}
-              </>
-            )}
-          </PrivateRouteMenu>
+        <div className={styles.dropdownContent}>
+          {/* ✅ No PrivateRouteMenu, just auth check */}
+          {isAuthenticated ? (
+            <>
+              <Link to="/profile">Profile</Link>
+              <Link onClick={logout}>Logout</Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/register">Register</Link>
+            </>
+          )}
           <Link to="/Futures">Futures</Link>
           <Link to="/AboutPage">About</Link>  
         </div>
@@ -41,7 +43,3 @@ const toggleMenu = () => {
 }
 
 export default DropdownMenu;
-
-
-
-

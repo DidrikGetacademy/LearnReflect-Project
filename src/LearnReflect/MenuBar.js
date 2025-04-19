@@ -12,7 +12,6 @@ import Payment from "./payment";
 
 
 function IntroPage() {
-  alert(" this website is Under development")
   const [sectionVisible, setSectionVisible] = useState(false);
   const [activePage, setActivePage] = useState(null);
   const handleScrollToPage = (page) => {
@@ -30,6 +29,7 @@ function IntroPage() {
       }
     }, 100);
   };
+  const isHomePage = activePage === null;
 
   return (
     
@@ -42,12 +42,9 @@ function IntroPage() {
           <h1 className={Styles.Title}>LearnReflects System</h1>
 
           <MenuComponent handleScrollToPage={handleScrollToPage} />
-          {!activePage && (
-            <div className={Styles["bio-Intro"]}> 
-            <br />
-            <VideoIntro />
-          </div>
-          )}
+          {isHomePage && <VideoIntro />}
+
+        
         </div>
       </div>
 

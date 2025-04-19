@@ -51,12 +51,11 @@
   }
 }
 
-
 .MenuContainer {
   width: 100%;
-  height: 75px;
   background-color: black;
   display: flex;
+  flex-direction: row;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,7 +65,27 @@
   gap: 15px;
   box-sizing: border-box;
   align-items: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+  transform 2s cubic-bezier(0.25, 1, 0.5, 1),
+  opacity 1.5s ease 0.3s;
+
 }
+
+.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closed {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .MenuContainer button {
   flex: 1;
@@ -98,10 +117,45 @@
     height: auto;
     justify-content: center;
   }
+  @media (max-width: 768px) {
+    .NavigationImage {
+      height: 40px;
+      width: 40px;
+      position: fixed;
+      top: 130px; 
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: black;
+      padding: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition:
+        top 2s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.3s ease;
+  
+      /* REMOVE these (they conflict with transform-based centering) */
+      inset-inline: unset;
+      margin-inline: unset;
+    }
+  }
+  
+  
+
+  
+  .NavigationImage:hover {
+    transform: scale(1.1);
+  }
+  
 
   .MenuContainer button {
-    flex: 1 0 20%;
-    margin: 5px;
+    flex: 1 0 45%;
+    font-size: 0.5rem;
+    padding:1px; 
+    white-space: normal;
+    text-align: center;
   }
 }
 
@@ -158,9 +212,6 @@
 
 
 
-
-
-
   .Intro-Name {
     display: flex;
     flex-direction: column; 
@@ -193,7 +244,7 @@
     align-items: center;  
     justify-content: center; 
     width: 100%; 
-    padding-bottom: 20px;  /* Remove this padding, as it's no longer at the bottom */
+    padding-bottom: 20px;  
   }
   
   .bottom-NavigationIcon ul {
@@ -344,17 +395,30 @@
     text-align: center;
   }
   
-  
-  
-  /* Remove duplicate NavigationImage styles and keep only one */
   .NavigationImage {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     cursor: pointer;
-    border-radius: 60px;
-    z-index: 3;
-    transition: transform 0.3s ease;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transition: top 2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
   }
+  
+
+  .arrowOpen {
+    top: 150px;
+  }
+  
+
+  .arrowClosed {
+    top: 10px;
+  }
+  
   
   .NavigationImage:hover {
     transform: scale(1.1);
