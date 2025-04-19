@@ -4,8 +4,16 @@ import SoftwareIMG2 from '../LearnReflect/Images/videoenchancer.png';
 import Upscaled1 from '../LearnReflect/Images/Oppskalert1.png';
 import Upscaled2 from '../LearnReflect/Images/Oppskalert2.png';
 import SoftwareIMG10 from '../LearnReflect/Images/app10.png';
+import socialmediauploadIMG from '../LearnReflect/Images/socialmediaupload.png';
+import software7 from '../LearnReflect/Images/software7.png';
+import software3 from '../LearnReflect/Images/software3.png';
+import youtubedownloaderIMG from '../LearnReflect/Images/software.png';
+import selectedfilesimg from '../LearnReflect/Images/selectedfiles.png';
+import mediainfoanalyst from '../LearnReflect/Images/mediainfoanalyst.png';
+import LRAGENTIMG from '../LearnReflect/Images/LRAGENT.png'
+import toollistimg from '../LearnReflect/Images/toolslist.png'
 import Styles from  './Css/imageCarousal.module.css';
-const images = [SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG10];
+const images = [software7,software3,youtubedownloaderIMG,selectedfilesimg,LRAGENTIMG,toollistimg,mediainfoanalyst,SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG10,socialmediauploadIMG];
 
 function ImageCarousel() {
     const [currentindex, setCurrentIndex] = useState(0);// statevariabel som innholder nåværende bilde som vises.
