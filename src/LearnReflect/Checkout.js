@@ -70,16 +70,20 @@ function Checkout() {
 
 
 
-
-
-    const onCreateOrder = (data, actions) => {
-        const amount = getAmount();
-        console.log("amount: ",amount);
-        console.log("Data in the oncreateOrder Function: ", data)
-        return actions.order.create({
-            purchase_units: [{ amount: { value: amount, }, },], 
-        });
+    const onCreateOrder2 = (data, actions) => {
+        alert("Purchases are currently disabled. This software is not for sale yet.");
+        return actions.reject(); // Cancel PayPal flow
     }
+    
+
+    // const onCreateOrder = (data, actions) => {
+    //     const amount = getAmount();
+    //     console.log("amount: ",amount);
+    //     console.log("Data in the oncreateOrder Function: ", data)
+    //     return actions.order.create({
+    //         purchase_units: [{ amount: { value: amount, }, },], 
+    //     });
+    // }
 
 
 
@@ -175,7 +179,7 @@ function Checkout() {
                     <input onChange={handleEmailChange} type="email" placeholder="E-Mail" className={styles.EmailInput} ref={emailref} />
                     <PayPalButtons
                         style={{ layout: "vertical" }}
-                        createOrder={(data, actions) => onCreateOrder(data, actions)}
+                        createOrder={(data, actions) => onCreateOrder2(data, actions)}
                         onApprove={(data, actions) => onApprove(data, actions)}
                         onError={(err) => console.error("Paypal error: ", err)}
                         disabled={CheckPaymentValue()}

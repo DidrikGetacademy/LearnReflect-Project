@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
+import SoftwareIMG1 from '../LearnReflect/Images/toolwindow.png';
+import SoftwareIMG2 from '../LearnReflect/Images/videoenchancer.png';
 import Upscaled1 from '../LearnReflect/Images/Oppskalert1.png';
 import Upscaled2 from '../LearnReflect/Images/Oppskalert2.png';
-import SoftwareIMG1 from '../LearnReflect/Images/APP1.png'
-import SoftwareIMG2 from '../LearnReflect/Images/APP2.png'
-import SoftwareIMG3 from '../LearnReflect/Images/APP3.png'
-import SoftwareIMG4 from '../LearnReflect/Images/APP4.png'
-import SoftwareIMG5 from '../LearnReflect/Images/app5.png'
-import SoftwareIMG6 from '../LearnReflect/Images/app6.png'
-import SoftwareIMG7 from '../LearnReflect/Images/app7.png'
-import SoftwareIMG8 from '../LearnReflect/Images/app8.png'
-import SoftwareIMG9 from '../LearnReflect/Images/app9.png'
-import SoftwareIMG10 from '../LearnReflect/Images/app10.png'
+import SoftwareIMG10 from '../LearnReflect/Images/app10.png';
 import Styles from  './Css/imageCarousal.module.css';
-const images = [SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG3,SoftwareIMG4,SoftwareIMG5,SoftwareIMG6,SoftwareIMG7,SoftwareIMG8,SoftwareIMG9,SoftwareIMG10];
+const images = [SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG10];
 
 function ImageCarousel() {
     const [currentindex, setCurrentIndex] = useState(0);// statevariabel som innholder nåværende bilde som vises.

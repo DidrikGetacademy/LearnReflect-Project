@@ -12,10 +12,9 @@ import Payment from "./payment";
 
 
 function IntroPage() {
-
+  alert(" this website is Under development")
   const [sectionVisible, setSectionVisible] = useState(false);
   const [activePage, setActivePage] = useState(null);
-  
   const handleScrollToPage = (page) => {
     setSectionVisible(true);
     setActivePage(page);
@@ -33,6 +32,7 @@ function IntroPage() {
   };
 
   return (
+    
     <div className={Styles.container}>
       <div className={`${Styles["extra-site"]} ${Styles.top}`} />
       <div className={`${Styles["extra-site"]} ${Styles.bottom}`} />
@@ -42,7 +42,6 @@ function IntroPage() {
           <h1 className={Styles.Title}>LearnReflects System</h1>
 
           <MenuComponent handleScrollToPage={handleScrollToPage} />
-
           {!activePage && (
             <div className={Styles["bio-Intro"]}> 
             <br />
