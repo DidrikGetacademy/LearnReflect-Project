@@ -398,26 +398,54 @@
   .NavigationImage {
     height: 40px;
     width: 40px;
+    position: fixed;
+    top: 10px; /* or via .arrowClosed / .arrowOpen */
+    left: 50%;
+    transform: translateX(-50%); /* adjust here for perfect center */
+    z-index: 999;
+    transition: top 2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
     cursor: pointer;
     border-radius: 50%;
     background-color: black;
+    padding: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    transition: top 2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
   }
   
-
   .arrowOpen {
-    top: 150px;
+    top: 110px;
+    transform: translateX(-50%) rotate(180deg);
   }
   
-
   .arrowClosed {
     top: 10px;
+    transform: translateX(-50%) rotate(0deg);
   }
+  
+  /* Responsive tweak: add a little shift for large screens */
+  @media (min-width: 1200px) {
+    .NavigationImage {
+      transform: translateX(-50%) translateX(70px);
+    }
+    .arrowOpen {
+      transform: translateX(-50%) translateX(70px) rotate(180deg) ;
+    }
+    .arrowClosed {
+      transform: translateX(-50%) translateX(70px) rotate(0deg);
+    }
+
+  }
+  @media (max-width: 768px) {
+    .NavigationImage.arrowClosed {
+      top: 10px; /* ⬅️ Move it further down */
+      
+    }
+  
+    .NavigationImage.arrowOpen {
+      top: 150px; /* ⬅️ Also push open state down */
+      left:45%
+    }
+  }
+  
   
   
   .NavigationImage:hover {
@@ -432,3 +460,34 @@
     position: relative;
     top: 100px;
   }
+  .backgroundImage3 {
+  position: fixed;
+  top: 0;
+  left:33%;
+  justify-content: center;
+  width: 30vw;  /* Adjust as needed */
+  height: 100vh;
+  background-image: url('../Images/you.png');
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  z-index:1;
+  opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+  .backgroundImage3 {
+    position: fixed;
+    top:-47vh;
+    left:28%;
+    justify-content: center;
+    width: 50vw;  /* Adjust as needed */
+    height: 100vh;
+    background-image: url('../Images/you.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index:1;
+    opacity: 0.5;
+  }
+}

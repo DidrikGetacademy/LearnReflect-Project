@@ -34,15 +34,20 @@ function IntroPage() {
   return (
     
     <div className={Styles.container}>
+
+        <div className={Styles.backgroundImage3} />
       <div className={`${Styles["extra-site"]} ${Styles.top}`} />
       <div className={`${Styles["extra-site"]} ${Styles.bottom}`} />
+
 
       <div className={Styles["Intro-Container"]}>
         <div className={Styles["Intro-Name"]}>
           <h1 className={Styles.Title}>LearnReflects System</h1>
 
           <MenuComponent handleScrollToPage={handleScrollToPage} />
-          {isHomePage && <VideoIntro />}
+          {isHomePage && 
+          
+          <VideoIntro />}
 
         
         </div>

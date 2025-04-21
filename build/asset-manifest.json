@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5d4b822.css",
-    "main.js": "/static/js/main.23dc1909.js",
+    "main.css": "/static/css/main.5f6a59ed.css",
+    "main.js": "/static/js/main.3fa4e990.js",
     "static/media/8kbackgroundmenubar.png": "/static/media/8kbackgroundmenubar.88e8a938f7eddf1e497a.png",
     "static/media/AI1.png": "/static/media/AI1.e64f1f9051446c24cc5a.png",
     "static/media/Oppskalert2.png": "/static/media/Oppskalert2.9c511a739a58149e126a.png",
     "static/media/Oppskalert1.png": "/static/media/Oppskalert1.fbf0d0d3e27bc644de4e.png",
     "static/media/imageintro.mp4": "/static/media/imageintro.7ca4def7d0d82028d46b.mp4",
+    "static/media/you.png": "/static/media/you.7cd0ca0c2af7b66e9ea3.png",
+    "static/media/menuimg.png": "/static/media/menuimg.b258f2e5fb32687ea49a.png",
     "static/media/toolwindow.png": "/static/media/toolwindow.b456038bceea525551ea.png",
     "static/media/software3.png": "/static/media/software3.c90ac050e8606755c503.png",
     "static/media/youtube downloader.png": "/static/media/youtube downloader.912ea4146178f8d5919b.png",
@@ -28,11 +30,11 @@
     "static/media/toolslist.png": "/static/media/toolslist.068623a4647409767528.png",
     "static/media/hoodie2.jpg": "/static/media/hoodie2.e7cccf96f294da4928c7.jpg",
     "index.html": "/index.html",
-    "main.f5d4b822.css.map": "/static/css/main.f5d4b822.css.map",
-    "main.23dc1909.js.map": "/static/js/main.23dc1909.js.map"
+    "main.5f6a59ed.css.map": "/static/css/main.5f6a59ed.css.map",
+    "main.3fa4e990.js.map": "/static/js/main.3fa4e990.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5d4b822.css",
-    "static/js/main.23dc1909.js"
+    "static/css/main.5f6a59ed.css",
+    "static/js/main.3fa4e990.js"
   ]
 }
