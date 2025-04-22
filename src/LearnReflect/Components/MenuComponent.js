@@ -7,19 +7,24 @@ const MenuComponent = ({ handleScrollToPage }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);
+
   };
+  const handlemenuclick = (page)  => {
+    handleScrollToPage(page)
+    setIsMenuOpen(false)
+  }
 
   return (
     <>
 
        <div className={`${Styles.MenuContainer} ${isMenuOpen ? Styles.open : Styles.closed}`}>
           
-          <button onClick={() => handleScrollToPage("self-dev")}>LearnReflects Self Development</button>
-          <button onClick={() => handleScrollToPage("shop")}>Shop</button>
-          <button onClick={() => handleScrollToPage("Ai Software")}>LearnReflects AI Software</button>
-          <button onClick={() => handleScrollToPage("Ai Agent")}>LearnReflect Agent</button>
-          <button onClick={() => handleScrollToPage("Contact")}>Contact us</button>
-          <button onClick={() => handleScrollToPage("whitelist")}>WhiteList</button>
+          <button onClick={() => handlemenuclick("self-dev")}>LearnReflects Self Development</button>
+          <button onClick={() => handlemenuclick("shop")}>Shop</button>
+          <button onClick={() => handlemenuclick("Ai Software")}>LearnReflects AI Software</button>
+          <button onClick={() => handlemenuclick("Ai Agent")}>LearnReflect Agent</button>
+          <button onClick={() => handlemenuclick("Contact")}>Contact us</button>
+          <button onClick={() => handlemenuclick("whitelist")}>WhiteList</button>
         </div>
         <img
   src={arrow}

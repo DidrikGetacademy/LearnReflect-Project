@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-//import "../css/Homepage.css";
+import Styles from '../Css/login.module.css';
 import DropdownMenu from "../Components/DropDownController";
 import Bcomponent from "../Components/BComponent";
 import LComponent from "../Components/LogoComponent";
 import { useAuth } from "../Components/Authanciation/AuthProvider";
 import { EmptyInput } from "../Components/Validation";
+
 function LoginPage() {
   const { loginAction } = useAuth();
-  const [ErrorMessage, setErrorMessage] = useState("");
-  const [values, setValues] = useState({
-    name: "",
-    password: ""
-  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [values, setValues] = useState({ name: "", password: "" });
 
-
-
-  const message = {
+  const messages = {
     IncorrectUsername: "Incorrect Username",
     EmptyField: "Fields can't be empty",
     WrongPassword: "Wrong Password",
@@ -25,65 +21,73 @@ function LoginPage() {
   };
 
   const handleInput = event => {
-    setValues(prev => ({...prev,[event.target.name]: event.target.value }));
+    setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
   };
-
 
   const handleSubmit = async event => {
     event.preventDefault();
-    if (!EmptyInput(values.name,values.password)) {
+    if (!EmptyInput(values.name, values.password)) {
       try {
-        const response = await axios.post( "http://localhost:8081/login",  values);
+        const response = await axios.post("http://localhost:8081/login", values);
         const responseData = response.data;
+
         if (responseData.success) {
           loginAction(responseData);
         } else if (responseData === "Incorrect Username or Email") {
-          setErrorMessage(message.IncorrectUsername);
+          setErrorMessage(messages.IncorrectUsername);
         } else if (responseData === "Incorrect password") {
-          setErrorMessage(message.WrongPassword);
+          setErrorMessage(messages.WrongPassword);
         } else if (responseData === "No user exsist") {
-          setErrorMessage(message.IncorrectUsername);
+          setErrorMessage(messages.IncorrectUsername);
         } else {
-          setErrorMessage(message.ServerError);
+          setErrorMessage(messages.ServerError);
         }
       } catch (error) {
         console.error("Error:", error);
         alert("Error occurred while processing your request");
       }
-    } else return;
+    } else {
+      setErrorMessage(messages.EmptyField);
+    }
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className={Styles.loginWrapper}>
+      <h1 className={Styles.title}>Login to LearnReflect</h1>
       <LComponent />
       <Bcomponent />
       <DropdownMenu />
-      <div>
-        <div className="logincontainer">
-          <form onSubmit={handleSubmit} className="loginform">
-            <label className="ErrorLabel">
-              {ErrorMessage}
+
+      <div className={Styles.loginContainer}>
+        <form onSubmit={handleSubmit} className={Styles.loginForm}>
+          {errorMessage && (
+            <label className={Styles.errorLabel}>
+              {errorMessage}
             </label>
-            <br />
-            <input
-              onChange={handleInput}
-              name="name"
-              placeholder="Username or Email"
-            />
-            <input
-              onChange={handleInput}
-              name="password"
-              placeholder="Password"
-              type="password"
-            />
-            <button type="submit" className="LoginButton">
-              Login
-            </button>
-          </form>
-        </div>
+          )}
+
+          <input
+            onChange={handleInput}
+            name="name"
+            placeholder="Username or Email"
+            className={Styles.input}
+          />
+
+          <input
+            onChange={handleInput}
+            name="password"
+            placeholder="Password"
+            type="password"
+            className={Styles.input}
+          />
+
+          <button type="submit" className={Styles.loginButton}>
+            Login
+          </button>
+        </form>
       </div>
     </div>
   );
 }
+
 export default LoginPage;

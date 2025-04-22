@@ -1,6 +1,7 @@
 @media (max-width: 480px) {
   body {
     padding: 0 10px;
+    overflow-x: hidden;
   }
 
   h1, h2, h3 {
@@ -71,6 +72,7 @@
   transition:
   transform 2s cubic-bezier(0.25, 1, 0.5, 1),
   opacity 1.5s ease 0.3s;
+  overflow-x: hidden;
 
 }
 
@@ -263,12 +265,8 @@
     box-shadow: 0 0 15px 5px rgba(0, 162, 255, 0.6);
   }
   
-  .Title {
-    font-size: 30px;
-    font-weight: bold;
-    font-style: italic;
-    color: white;
-  }
+
+  
   
   body, html {
     height: auto;
@@ -399,9 +397,9 @@
     height: 40px;
     width: 40px;
     position: fixed;
-    top: 10px; /* or via .arrowClosed / .arrowOpen */
+    top: 10px; 
     left: 50%;
-    transform: translateX(-50%); /* adjust here for perfect center */
+    transform: translateX(-50%); 
     z-index: 999;
     transition: top 2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
     cursor: pointer;
@@ -420,8 +418,7 @@
     top: 10px;
     transform: translateX(-50%) rotate(0deg);
   }
-  
-  /* Responsive tweak: add a little shift for large screens */
+
   @media (min-width: 1200px) {
     .NavigationImage {
       transform: translateX(-50%) translateX(70px);
@@ -436,13 +433,13 @@
   }
   @media (max-width: 768px) {
     .NavigationImage.arrowClosed {
-      top: 10px; /* ⬅️ Move it further down */
-      
+      top: 10px;
+      left:45%;
     }
   
     .NavigationImage.arrowOpen {
-      top: 150px; /* ⬅️ Also push open state down */
-      left:45%
+      top: 150px; 
+      left:45%;
     }
   }
   

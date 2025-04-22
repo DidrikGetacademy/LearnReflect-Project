@@ -1,36 +1,47 @@
-/* Checkout.module.css */
 .stuker {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    background-size: cover;
-    z-index: -1;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  overflow: hidden;
+  z-index: -1;
+}
+.checkoutWrapper {
+  background-color: #0d0d0d;
+  width: 30vw;
+  height: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: white;
+  overflow: hidden;
+}
+  
+  
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 28vw;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  color: white;
+  overflow: hidden;
+}
 
-  
-  .checkout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
+.SoftWareImg {
     width: 100%;
-    max-width: 750px;
-    margin: auto;
-    border-radius: 12px;
-    background-color: #333;
-    z-index: 1;
-    padding: 20px;
-    color: white;
-    margin: 40px auto;
-    box-sizing: border-box;
-  }
-  
-  .SoftWareImg {
-    width: auto;
     max-height: 300px;
     margin-bottom: 20px;
     object-fit: contain;
@@ -43,7 +54,10 @@
     width: 100%;
     margin-top: 20px;
   }
-  
+  .currencySelect:hover {
+    background-color: #e0e0e0;
+    color: #333;
+  }
   .currencySelect,
   .selectSubscription {
     width: 100%;
@@ -79,11 +93,34 @@
     text-align: center;
     width: 100%;
   }
+  media (max-width: 1024px) {
+    .checkoutWrapper {
+      width: 90vw;
+      padding: 40px 20px;
+    }
   
-  /* Responsive layout */
-  @media (max-width: 768px) {
     .checkout {
-      padding: 15px;
+      width: 100%;
+      padding: 30px 20px;
+    }
+  
+    .currencySelect,
+    .selectSubscription,
+    .EmailInput {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .checkoutWrapper {
+      width: 95vw;
+      padding: 30px 15px;
+      margin-top: 30px;
+      border-radius: 20px;
+    }
+  
+    .checkout {
+      padding: 25px 15px;
     }
   
     .SoftWareImg {
@@ -94,6 +131,35 @@
     .selectSubscription,
     .EmailInput {
       font-size: 14px;
+      max-width: 100%;
     }
   }
   
+  @media (max-width: 480px) {
+    .checkoutWrapper {
+      width: 100vw;
+      padding: 20px 10px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  
+    .checkout {
+      width: 100%;
+      padding: 20px 10px;
+    }
+  
+    .SoftWareImg {
+      max-height: 180px;
+    }
+  
+    label {
+      font-size: 0.95rem;
+    }
+  
+    .currencySelect,
+    .selectSubscription,
+    .EmailInput {
+      font-size: 13px;
+      padding: 8px;
+    }
+  }

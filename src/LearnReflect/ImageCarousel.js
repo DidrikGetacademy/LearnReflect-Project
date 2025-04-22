@@ -37,16 +37,18 @@ function ImageCarousel() {
 
     return (
         <div>
-            <h2 className={Styles["h2-title"]}>LearnReflect VideoEnchancer</h2>
-            <div className={Styles["Image-Scroll"]}>
-                <div className={Styles["image-container"]}>
-                    <img className={Styles["SoftWareImg"]} src={images[currentindex]} alt="SoftwareIMG" />
-                </div>
-                <div className={Styles["navigation-buttons"]}>
-                    <button className={Styles["nav-button"]}  onClick={prevImage}>←</button> 
-                    <button className={Styles["nav-button"]}    onClick={nextImage}>→</button> 
-                </div>
+         
+                    <div className={Styles["Image-Scroll"]}>
+            <div className={Styles["carousel-image-wrapper"]}>
+                <img className={Styles["SoftWareImg"]} src={images[currentindex]} alt="SoftwareIMG" />
             </div>
+
+            <div className={Styles["navigation-buttons"]}>
+                <button className={Styles["nav-button"]} onClick={prevImage}>←</button>
+                <button className={Styles["nav-button"]} onClick={nextImage}>→</button>
+            </div>
+            </div>
+
         </div>
 
     );

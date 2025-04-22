@@ -4,7 +4,7 @@ import Styles from "./Css/MenuBar.module.css";
 import Whitelist from './Whitelistpage';
 import ContactNavBar from '../LearnReflect/Contact.js';
 import ShopPage from "../LearnReflect/Shop/Shop";
-import SelfDevelopment from '../LearnReflect/LearnReflect Discipline/SelfDevelopment';
+import SelfDevelopment from './SelfDevelopment';
 import LRAgent from '../LearnReflect/AI-LearnReflect/Chat/LRAgent';
 import VideoIntro from "./VideoIntro";
 import MenuComponent from "./Components/MenuComponent";
@@ -34,15 +34,13 @@ function IntroPage() {
   return (
     
     <div className={Styles.container}>
-
-     v
+      {isHomePage && <div className={Styles.backgroundImage3}></div>}
       <div className={`${Styles["extra-site"]} ${Styles.top}`} />
       <div className={`${Styles["extra-site"]} ${Styles.bottom}`} />
 
 
       <div className={Styles["Intro-Container"]}>
         <div className={Styles["Intro-Name"]}>
-          <h1 className={Styles.Title}>LearnReflects System</h1>
 
           <MenuComponent handleScrollToPage={handleScrollToPage} />
           {isHomePage && 

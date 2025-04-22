@@ -6,7 +6,7 @@ import styles from '../Css/DropdownMenu.module.css';
 
 function DropdownMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  const { logout, isAuthenticated } = useAuth(); // ✅ You already have this!
+  const { logout, isAuthenticated } = useAuth(); 
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
@@ -22,7 +22,6 @@ function DropdownMenu() {
       />
       {isMenuOpen && (
         <div className={styles.dropdownContent}>
-          {/* ✅ No PrivateRouteMenu, just auth check */}
           {isAuthenticated ? (
             <>
               <Link to="/profile">Profile</Link>

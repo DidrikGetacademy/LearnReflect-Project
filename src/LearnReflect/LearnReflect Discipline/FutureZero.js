@@ -2,15 +2,16 @@ import React from 'react';
 import DropdownMenu from '../Components/DropDownController';
 import Bcomponent from '../Components/BComponent';
 import LComponent from '../Components/LogoComponent';
+import Styles from '../Css/Futurezero.module.css'
 function FutureZero(){
 return(
-    <div>
-      <h1 className='hh1'>Futures Membership</h1>
+    <div className={Styles.futureContainer}>
+      <h1 class={Styles.hh1}>Futures Membership</h1>
       <LComponent /> 
       <DropdownMenu /> 
       <Bcomponent /> 
-      <div class="bio-container">
-      <p class="bio-text">Register for Futures Membership and gain access to exclusive benefits:</p>
+      <div class={Styles.bioContainer}>
+      <p class={Styles.biotext}></p>
       
     </div>
   </div>

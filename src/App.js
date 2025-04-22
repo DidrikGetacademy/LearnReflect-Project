@@ -3,7 +3,7 @@ import './LearnReflect/Css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route  } from 'react-router-dom';
 import CountDown from "./LearnReflect/Countdown_prerealse/CountDown";
-import SelfDevelopment from "./LearnReflect/LearnReflect Discipline/SelfDevelopment";
+import SelfDevelopment from "./LearnReflect/SelfDevelopment";
 import WhitelistPage from './LearnReflect/Whitelistpage';
 import MenuBar from './LearnReflect/MenuBar';
 import ContactNavBar from './LearnReflect/Contact'; 

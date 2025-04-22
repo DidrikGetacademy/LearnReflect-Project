@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ValidatePassword, EqualPasswords, validateEmail} from "../Components/Validation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Styles from '../Css/Register.module.css'
 function RegistrationForm() {
   const navigate = useNavigate();
   const [errors, SetErrors] = useState({});
@@ -38,7 +39,7 @@ function RegistrationForm() {
 
 
   //Funksjon for innsending av login skjema til backend
-  const SubmitRegistrationRequest = async e => {
+  const submitRegistrationRequest = async e => {
     e.preventDefault(); // Forhindrer standard/side-refresh ved skjema innsending
     
     const RegistrationData = {
@@ -71,17 +72,20 @@ function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={SubmitRegistrationRequest}>
+    <div className={Styles.RegisterContainer}>
+
+<form className={Styles.RegisterForm} onSubmit={submitRegistrationRequest}>
+<h2 className={Styles.title}>Create Your Account</h2>
       <label>
         Username:
         <input
           onChange={handleChanges}
-          className="Username"
+          className={Styles.input}          
           type="text"
           placeholder="Username"
           name="Username"
           value={Values.Username}
-        />
+          />
         {errors.Username &&
           <span className="Errors">
             {errors.Username}
@@ -92,12 +96,12 @@ function RegistrationForm() {
         Email:
         <input
           onChange={handleChanges}
-          className="Email"
+          className={Styles.input}
           type="email"
           placeholder="Email"
           name="EmailAddress"
           value={Values.EmailAddress}
-        />
+          />
         {errors.EmailAddress &&
           <span className="Errors">
             {errors.EmailAddress}
@@ -108,12 +112,12 @@ function RegistrationForm() {
         Password:
         <input
           onChange={handleChanges}
-          className="Password"
+          className={Styles.input}
           type="password"
           placeholder="password"
           name="Password"
           value={Values.Password}
-        />
+          />
         {errors.Password &&
           <span className="Errors">
             {errors.Password}
@@ -124,12 +128,12 @@ function RegistrationForm() {
         Confirm Password:
         <input
           onChange={handleChanges}
-          className="ConfirmPassword"
+          className={Styles.input}
           type="password"
           placeholder="Confirm Password"
           name="ConfirmPassword"
           value={Values.ConfirmPassword}
-        />
+          />
         {errors.ConfirmPassword &&
           <span className="Errors">
             {errors.ConfirmPassword}
@@ -138,14 +142,17 @@ function RegistrationForm() {
       <label>
         Birthday:
         <input
+          className={Styles.input}
+
           onChange={handleChanges}
           type="date"
           value={Values.BirthDate}
           name="BirthDate"
-        />
+          />
       </label>
       <button type="submit">Register</button>
     </form>
+          </div>
   );
 }
 export default RegistrationForm;

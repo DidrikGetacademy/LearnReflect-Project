@@ -155,7 +155,7 @@ function Checkout() {
 
 
     return (
-        <div style={{ display: "flex", alignItems: "center", minHeight: "100vh", width: "100vw", justifyContent: "center", padding: "40px 20px", boxSizing: "border-box", }}>
+        <div className={styles.checkoutWrapper}>
 
             <div className={styles.checkout}>
                 <ImageCarousel />
