@@ -35,7 +35,7 @@ function IntroPage() {
     
     <div className={Styles.container}>
 
-        <div className={Styles.backgroundImage3} />
+     v
       <div className={`${Styles["extra-site"]} ${Styles.top}`} />
       <div className={`${Styles["extra-site"]} ${Styles.bottom}`} />
 
