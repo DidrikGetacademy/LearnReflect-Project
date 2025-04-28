@@ -40,7 +40,6 @@
 
 
 /*PRODUCT CARD*/
-
 .page-container {
   position: relative;
   display: flex;
@@ -71,25 +70,27 @@
 }
 
 
-title-productcard
-/**/
+.title-productcard{
 
-.product-page {
+}
+
+
+
+.productcard-img {
+  width: 25vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
 }
 
+.pick{
 
-.ProductImg {
-  z-index: 3;
-  width: 220px;
-  height: 300px;
-  cursor: pointer;
 }
 
+.sizes{
+
+}
+.size{
+  
+}
 
 .priceanddescription-productcard {
   display: grid;
@@ -99,22 +100,75 @@ title-productcard
   justify-content: center;
   text-align: center;
 }
+.description-productcard{
 
-
-
-
-
-
-@media (max-width: 480px) {
-  body {
-    padding: 0 10px;
-  }
-
-  h1, h2, h3 {
-    font-size: 1.2rem;
-  }
 }
 
+.price-productcard{
+
+}
+
+
+
+/*ShoppingCart*/
+.shopping-cart{
+
+}
+
+.Cart-Container {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 400px;
+  height: 90vh;
+  background-color: white;
+  overflow-y: auto;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  animation: slide-in 0.3s ease-out forwards;
+}
+
+.item {
+  width: 100%;
+  border: 2px solid grey;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 9vh;
+}
+
+
+.description{
+
+}
+
+.CartCloseCheckout {
+  position: absolute;
+  display: grid;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  left: 0;
+}
+
+
+.total-price{
+
+}
+
+.Checkout{
+
+}
+
+.Close{
+
+}
+
+
+
+/*ShopPage*/
 .LR-Logo {
   height: 85%;
   width: 2.7%;
@@ -123,11 +177,19 @@ title-productcard
   position: absolute;
   border-radius: 30px;
 }
-@media (max-width: 768px) {
-  .LR-Logo {
-    width: 40px;
-    height: auto;
-  }
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.ProductImg {
+  z-index: 3;
+  width: 220px;
+  height: 300px;
+  cursor: pointer;
 }
 
 .dropdownShop {
@@ -161,17 +223,11 @@ title-productcard
   text-align: center; 
   z-index: 4;
 }
-
+.cartimg {
+  cursor: pointer;
+}
 .dropdownShop:hover .dropdownShop-content {
   display: block;
-}
-
-@media (max-width: 768px) {
-  .dropdownShop-content {
-    width: 90vw;
-    height: auto;
-    max-height: 40vh;
-  }
 }
 
 .womenImg, .menImg {
@@ -179,17 +235,6 @@ title-productcard
   z-index: 2;
   height: 60%;
   width: 50%;
-}
-.womenImg { left: 0; }
-.menImg { right: 0; }
-
-@media (max-width: 768px) {
-  .womenImg, .menImg {
-    position: relative;
-    width: 90%;
-    height: auto;
-    margin: 10px auto;
-  }
 }
 
 .LabelContainer .active {
@@ -200,14 +245,6 @@ title-productcard
   color: white;
 }
 
-@media (max-width: 768px) {
-  .LabelContainer {
-    flex-direction: column;
-    height: auto;
-    font-size: 1rem;
-    padding: 10px;
-  }
-}
 
 .shop-page.animate .wall-top {
   animation: openWallsBottom 2s ease-out forwards;
@@ -244,10 +281,6 @@ title-productcard
   position: fixed;
 }
 
-.cartimg {
-  cursor: pointer;
-}
-
 .ShopContainer{
 position: relative;
 height: 100vh;
@@ -279,6 +312,51 @@ width: 100vw;
 .wall-top { top: 50%; }
 .wall-bottom { bottom: 50%; }
 
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .dropdownShop-content {
+    width: 90vw;
+    height: auto;
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .LR-Logo {
+    width: 40px;
+    height: auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .LabelContainer {
+    flex-direction: column;
+    height: auto;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+
 @keyframes openWallsTop {
   0% { height: 50%; background-color: black; }
   100% { height: 50vh; background-color: white; }
@@ -297,53 +375,12 @@ width: 100vw;
   animation: growAndShadow 3s ease-out infinite;
 }
 
-
-
-
-
-.Cart-Container {
-  position: fixed;
-  top: 70px;
-  right: 0;
-  width: 400px;
-  height: 90vh;
-  background-color: white;
-  overflow-y: auto;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  animation: slide-in 0.3s ease-out forwards;
-}
 @keyframes slide-in {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
 }
 
-.CartCloseCheckout {
-  position: absolute;
-  display: grid;
-  bottom: 0;
-  width: 100%;
-  height: 110px;
-  left: 0;
-}
 
 
 
-.item {
-  width: 100%;
-  border: 2px solid grey;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  height: 9vh;
-}
-
-
-
-.productcard-img {
-  width: 25vh;
-  display: flex;
-}
 
