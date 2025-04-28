@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Styles from "../Css/shop.module.css";
 function ShoppingCart({
   items = [],
   removeItem,
@@ -46,35 +47,32 @@ function ShoppingCart({
   const TotalItems = items.reduce((acc,item) => acc + (counts[item.id]  ||0),0);
   
   return (
-    <div className="Cart-Container">
-      <div className="shopping-cart">
-      {TotalItems > 0 && (
-
-        <div  style={{ display: hidden ? 'none' : 'block'}} className="item">
-          {items.map((item, index) => (
-            <div key={index} className="item">
-              <div className="image">
-                <img src={item.imageUrl} alt={item.title} />
+    <div className={Styles["Cart-Container"]}>
+      <div className={Styles["shopping-cart"]}>
+        {TotalItems > 0 && (
+          <div style={{ display: hidden ? 'none' : 'block' }} className={Styles["item"]}>
+            {items.map((item, index) => (
+              <div key={index} className={Styles["item"]}>
+                <div className={Styles["image"]}>
+                  <img src={item.imageUrl} alt={item.title} />
+                </div>
+                <span>{item.title}</span>
+                <div className={Styles["description"]}>
+                  <span>{item.description}</span>
+                </div>
+                <button onClick={() => handleincrement(item)}>+</button>
+                <span>{counts[item.id] || 0}</span>
+                <button onClick={() => handledecrement(item)}>-</button>
+                <button onClick={() => removeItem(item)}>Remove</button>
+                <div>{item.Price}$</div>
               </div>
-              <span>{item.title}</span>
-              <div className="description">
-                <span>{item.description}</span>
-              </div>
-              <button onClick={() => handleincrement(item)}>+</button>
-              <span>{counts[item.id] || 0}</span>
-              <button onClick={() => handledecrement(item)}>-</button>
-              <button onClick={() => removeItem(item)}>Remove</button>
-              <div>{item.Price}$</div>
-            </div>
-          ))}
-        </div>
-      )}
-        <div className="CartCloseCheckout">
-          <div className="total-price">Total {totalAmount} $</div>
-          <button  onClick={GotoPayment} className="Checkout">Checkout</button>
-          <button onClick={() => setOpenCart(false)} className="Close">
-            Close
-          </button>
+            ))}
+          </div>
+        )}
+        <div className={Styles["CartCloseCheckout"]}>
+          <div className={Styles["total-price"]}>Total {totalAmount} $</div>
+          <button onClick={GotoPayment} className={Styles["Checkout"]}>Checkout</button>
+          <button onClick={() => setOpenCart(false)} className={Styles["Close"]}>Close</button>
         </div>
       </div>
     </div>
