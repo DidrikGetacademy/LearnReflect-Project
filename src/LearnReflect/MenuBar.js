@@ -15,8 +15,9 @@ function IntroPage() {
   const [sectionVisible, setSectionVisible] = useState(false);
   const [activePage, setActivePage] = useState(null);
   const handleScrollToPage = (page) => {
-    setSectionVisible(true);
     setActivePage(page);
+    setTimeout(()=>setSectionVisible(true),10);
+    
     setTimeout(() => {
       const pageSection = document.getElementById("page-section");
       if (pageSection) {

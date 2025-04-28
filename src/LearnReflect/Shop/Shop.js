@@ -43,7 +43,7 @@ function ShopPage() {
   };
 
   return (
-   <div>
+   <div className={Styles.ShopContainer}>
       <div className={Styles.LabelContainer}>
         <Link to="/">
           <img alt="" className={Styles["LR-Logo"]} src={LR} />

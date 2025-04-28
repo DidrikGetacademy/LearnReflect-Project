@@ -203,6 +203,12 @@
   cursor: pointer;
 }
 
+.ShopContainer{
+position: relative;
+height: 100vh;
+width: 100vw;
+}
+
 .LabelContainer {
   z-index: 3;
   display: flex;

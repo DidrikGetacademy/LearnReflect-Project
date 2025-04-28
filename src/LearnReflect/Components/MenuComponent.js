@@ -18,7 +18,7 @@ const MenuComponent = ({ handleScrollToPage }) => {
     <>
 
        <div className={`${Styles.MenuContainer} ${isMenuOpen ? Styles.open : Styles.closed}`}>
-          
+           <button onClick={() => handlemenuclick(null)}>🏠 Home</button>
           <button onClick={() => handlemenuclick("self-dev")}>LearnReflects Self Development</button>
           <button onClick={() => handlemenuclick("shop")}>Shop</button>
           <button onClick={() => handlemenuclick("Ai Software")}>LearnReflects AI Software</button>
