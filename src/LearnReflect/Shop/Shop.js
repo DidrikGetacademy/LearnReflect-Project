@@ -48,9 +48,12 @@ function ShopPage() {
         <Link to="/">
           <img alt="" className={Styles["LR-Logo"]} src={LR} />
         </Link>
-        <label>
+        <button>
           <Link to="/ShopPage">Home</Link>
-        </label>
+        </button>
+        <button>
+          Contact
+        </button>
         <div className={Styles.dropdownShop}>
           <label>Products</label>
           <div className={Styles["dropdownShop-content"]}>
@@ -67,7 +70,7 @@ function ShopPage() {
             <a href="Option3">option 3</a>
           </div>
         </div>
-        <label>Contact</label>
+
         <div className={Styles.boxseca}>
           <input
             onClick={() => setShowInput(true)}
@@ -83,6 +86,7 @@ function ShopPage() {
             onMouseEnter={() => setShowInput(true)}
             onMouseLeave={() => setShowInput(false)}
             src={search}
+            className={Styles.SearchImg}
             />
           <img
             alt="cart"
@@ -102,8 +106,6 @@ function ShopPage() {
         <div>
         </div>
       </div>
-        <img alt="WomenImg" className={Styles.womenImg} src={women} />
-        <img alt="MenImg" className={Styles.menImg} src={men} />
       </div>
       <div className={Styles["wall-top"]} />
       <Product addProduct={addProductToCart} />

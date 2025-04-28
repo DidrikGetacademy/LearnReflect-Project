@@ -23,10 +23,8 @@ function IntroPage() {
       if (pageSection) {
         const scrollContainer = document.getElementById("scroll-container");
         if (scrollContainer) {
-          scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+          scrollContainer.scrollTo({top: 0, behavior: "smooth" });
         }
-        
-        
       }
     }, 100);
   };
@@ -43,12 +41,8 @@ function IntroPage() {
       <div className={Styles["Intro-Container"]}>
         <div className={Styles["Intro-Name"]}>
 
-          <MenuComponent handleScrollToPage={handleScrollToPage} />
-          {isHomePage && 
-          
-          <VideoIntro />}
-
-        
+          {activePage !== "shop" && <MenuComponent handleScrollToPage={handleScrollToPage} />}
+          {isHomePage &&  <VideoIntro />}
         </div>
       </div>
 
