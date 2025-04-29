@@ -8,13 +8,13 @@ import cart2 from "./images/cart2.png";
 import search from "./images/search.png";
 import Styles from "../Css/shop.module.css";
 
-function ShopPage() {
+function ShopPage({ handleScrollToPage }) {
   const [showInput, setShowInput] = useState(false);
   const [cart, setOpenCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [counts, setCounts] = useState({});
 
-
+  
   const addProductToCart = (product) => {
     const existingProduct = cartItems.find((item) => item.id === product.id);
     if (existingProduct) {
@@ -40,12 +40,14 @@ function ShopPage() {
     });
   };
 
+
+
   return (
 <div className={Styles.ShopContainer}>
   <nav className={Styles.navbar}>
-    <Link to="/" className={Styles.logo}>
-      <img alt="Logo" src={LR} className={Styles["LR-Logo"]} />
-    </Link>
+    <div className={Styles.logo}>
+      <img onClick={() => {handleScrollToPage(null)}} alt="Logo" src={LR} className={Styles["LR-Logo"]} />
+      </div>
     <ul className={Styles.navMenu}>
       <li><Link to="/ShopPage">Home</Link></li>
       <li><Link to="/Contact">Contact</Link></li>

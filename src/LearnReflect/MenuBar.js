@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Styles from "./Css/MenuBar.module.css";
 import Whitelist from './Whitelistpage';
@@ -11,13 +12,22 @@ import MenuComponent from "./Components/MenuComponent";
 import Payment from "./payment";
 
 
+
 function IntroPage() {
   const [sectionVisible, setSectionVisible] = useState(false);
   const [activePage, setActivePage] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setActivePage(null);
+    }
+  }, [location.pathname]);
+
   const handleScrollToPage = (page) => {
     setActivePage(page);
     setTimeout(()=>setSectionVisible(true),10);
-    
+
     setTimeout(() => {
       const pageSection = document.getElementById("page-section");
       if (pageSection) {
@@ -54,7 +64,7 @@ function IntroPage() {
           {sectionVisible && (
             <div id="page-section">
               {activePage === "self-dev" && <SelfDevelopment />}
-              {activePage === "shop" && <ShopPage />}
+              {activePage === "shop" && <ShopPage  handleScrollToPage={handleScrollToPage}/>}
               {activePage === "Ai Software" && <Payment />}
               {activePage === "Ai Agent" && <LRAgent />}
               {activePage === "Contact" && <ContactNavBar />}
