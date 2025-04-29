@@ -143,10 +143,11 @@
 .navbar {
   position: sticky;
   top:0;
-  background-color: lightgrey;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 2px solid white;
   padding: 10px 20px;
   z-index: 1000;
 
@@ -181,15 +182,51 @@
 
 /*ShopPage*/
 
-.navMenu{
-  display:flex;
+.navMenu {
+  display: flex;
   list-style: none;
-  gap:20px;
-}
-.navMenu li {
-  position: relative;
+  gap: 50px;
 }
 
+.navMenu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  border-radius: 16px;
+  font-size: 1rem;
+  border: 2px solid black;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem 0;
+  color: #000;
+  background-color: #fff;
+  height: 50px; 
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.navMenu li a,
+.navMenu li span {
+  display: block;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  padding: 0 20px; /* controls inner spacing */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navMenu li:hover {
+  background-color: black;
+  color: white;
+  border-color: #333; 
+}
+
+.navMenu li:hover a,
+.navMenu li:hover span {
+  color: white;
+}
 .dropdownContent {
   display: none;
   position: absolute;
