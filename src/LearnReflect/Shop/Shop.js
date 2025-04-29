@@ -49,42 +49,57 @@ function ShopPage({ handleScrollToPage }) {
       <img onClick={() => {handleScrollToPage(null)}} alt="Logo" src={LR} className={Styles["LR-Logo"]} />
       </div>
     <ul className={Styles.navMenu}>
-      <li><Link to="/ShopPage">Home</Link></li>
-      <li><Link to="/Contact">Contact</Link></li>
+      <button><Link to="/ShopPage">Home</Link></button>
+      <button><Link to="/Contact">Contact</Link></button>
       <li className={Styles.dropdown}>
         <span>Products</span>
         <div className={Styles.dropdownContent}>
-          <Link to="/Option1">Option 1</Link>
-          <Link to="/Option2">Option 2</Link>
-          <Link to="/Option3">Option 3</Link>
+        <div className={Styles.dropdownSection}>
+          <h4>Men</h4>
+          <Link>Jackets</Link>
+          <Link>Shirts</Link>
+          <Link>Shoes</Link>
+          </div>
+          <div className={Styles.dropdownSection}>
+          <h4>Women</h4>
+          <Link>Dresses</Link>
+          <Link>Tops</Link>
+          <Link>Shoes</Link>
+          </div>
+          <div className={Styles.dropdownSection}>
+            <h4>Kids</h4>
+          <Link>Clothing</Link>
+          <Link>Shoes</Link>
+          </div>
         </div>
       </li>
       <li className={Styles.dropdown}>
         <span>Sales</span>
         <div className={Styles.dropdownContent}>
+          <div className={Styles.dropdown}>
+
           <Link to="/Option1">Option 1</Link>
           <Link to="/Option2">Option 2</Link>
           <Link to="/Option3">Option 3</Link>
+          </div>
         </div>
       </li>
     </ul>
     <div className={Styles.navIcons}>
-      <input
-        onClick={() => setShowInput(true)}
-        type="text"
-        className={Styles.SearchInput}
-        placeholder="Search Product"
-        style={{ display: showInput ? "block" : "none" }}
-        onMouseEnter={() => setShowInput(true)}
-        onMouseLeave={() => setShowInput(true)}
-      />
-      <img
-        alt="Search"
-        src={search}
-        onMouseEnter={() => setShowInput(true)}
-        onMouseLeave={() => setShowInput(false)}
-        className={Styles.SearchImg}
-      />
+    <div className={Styles.searchContainer}>
+  <img
+    alt="Search"
+    src={search}
+    onClick={() => setShowInput(!showInput)}
+    className={Styles.SearchImg}
+  />
+  <input
+    type="text"
+    placeholder="Search Product"
+    className={`${Styles.SearchInput} ${showInput ? Styles.show : ""}`}
+  />
+</div>
+
       <img
         alt="Cart"
         src={cart2}
