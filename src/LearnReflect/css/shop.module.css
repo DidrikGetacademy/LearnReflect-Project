@@ -140,7 +140,17 @@
   height: 9vh;
 }
 
+.navbar {
+  position: sticky;
+  top:0;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
 
+}
 .description{
 
 }
@@ -170,35 +180,42 @@
 
 
 /*ShopPage*/
+
+.navMenu{
+  display:flex;
+  list-style: none;
+  gap:20px;
+}
+.navMenu li {
+  position: relative;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top:100%;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  flex-direction: column;
+  width:150px;
+}
+
+.dropdown:hover .dropdownContent{
+  display: flex;
+}
+
+.navIcons {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+
 .ShopContainer{
   position: relative;
   height: 100vh;
   width: 100vw;
   }
   
-.LabelContainer {
-    z-index: 3;
-    display: flex;
-    width: 100vw;
-    height: 6%;
-    background-color: lightgrey;
-    font-size: large;
-    font-style: italic;
-    position: relative;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-.LabelContainer .active {
-    color: blue;
-  }
-  
-.LabelContainer label:hover {
-    color: white;
-  }
-
-
 .boxseca {
   position: relative;
   display: flex;
@@ -233,15 +250,10 @@ height:50px;
   height:50px;
 }
 
-
-
 .LR-Logo {
-  height: 85%;
-  width: 2.7%;
-  left: 0;
-  top: 4px;
-  position: absolute;
-  border-radius: 30px;
+height:50px;
+border-radius: 90px;
+
 }
 .product-page {
   display: flex;
@@ -262,126 +274,5 @@ height:50px;
   position: relative;
   display: inline-block;
 }
-
-.dropdownShop-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 50vh; 
-  height: 40vh;
-  top: calc(100% + 18px); 
-  left: 0; 
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: start;
-  overflow: hidden;
-  border: 1.4px solid whitesmoke;
-}
-
-.dropdownShop-content a {
-  color: black;
-  padding: 12px 0; 
-  text-decoration: none;
-  display: block; 
-  width: 100%; 
-  text-align: center; 
-  z-index: 4;
-}
-
-.dropdownShop:hover .dropdownShop-content {
-  display: block;
-}
-
-
-
-
-
-.shop-page.animate .wall-top {
-  animation: openWallsBottom 2s ease-out forwards;
-}
-.shop-page.animate .wall-bottom {
-  animation: openWallsTop 2s ease-out forwards;
-}
-.wall-top,
-.wall-bottom {
-  background-color: black;
-  width: 100%;
-  position: absolute;
-  left: 0;
-}
-
-.wall-top { top: 50%; }
-.wall-bottom { bottom: 50%; }
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-  .dropdownShop-content {
-    width: 90vw;
-    height: auto;
-    max-height: 40vh;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 0 10px;
-  }
-
-  h1, h2, h3 {
-    font-size: 1.2rem;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .LR-Logo {
-    width: 40px;
-    height: auto;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .LabelContainer {
-    flex-direction: column;
-    height: auto;
-    font-size: 1rem;
-    padding: 10px;
-  }
-}
-
-
-@keyframes openWallsTop {
-  0% { height: 50%; background-color: black; }
-  100% { height: 50vh; background-color: white; }
-}
-@keyframes openWallsBottom {
-  0% { height: 50%; background-color: black; }
-  100% { height: 50vh; background-color: white; }
-}
-
-@keyframes growAndShadow {
-  0% { transform: scale(1); box-shadow: none; }
-  50% { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
-  100% { transform: scale(1); box-shadow: none; }
-}
-.LR-Logo:hover {
-  animation: growAndShadow 3s ease-out infinite;
-}
-
-@keyframes slide-in {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
-}
-
-
-
 
 

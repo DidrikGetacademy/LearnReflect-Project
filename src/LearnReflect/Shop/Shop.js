@@ -4,8 +4,6 @@ import Product from "./Product";
 import ShoppingCart from "./ShoppingCart";
 import LR from "./images/LRe.png";
 import { Link } from "react-router-dom";
-import women from "./images/shopwomen.avif";
-import men from "./images/working.webp";
 import cart2 from "./images/cart2.png";
 import search from "./images/search.png";
 import Styles from "../Css/shop.module.css";
@@ -43,75 +41,72 @@ function ShopPage() {
   };
 
   return (
-   <div className={Styles.ShopContainer}>
-      <div className={Styles.LabelContainer}>
-        <Link to="/">
-          <img alt="" className={Styles["LR-Logo"]} src={LR} />
-        </Link>
-        <button>
-          <Link to="/ShopPage">Home</Link>
-        </button>
-        <button>
-          Contact
-        </button>
-        <div className={Styles.dropdownShop}>
-          <label>Products</label>
-          <div className={Styles["dropdownShop-content"]}>
-            <a href="Option1">option 1</a>
-            <a href="Option2">option 2</a>
-            <a href="Option3">option 3</a>
-          </div>
+<div className={Styles.ShopContainer}>
+  <nav className={Styles.navbar}>
+    <Link to="/" className={Styles.logo}>
+      <img alt="Logo" src={LR} className={Styles["LR-Logo"]} />
+    </Link>
+    <ul className={Styles.navMenu}>
+      <li><Link to="/ShopPage">Home</Link></li>
+      <li><Link to="/Contact">Contact</Link></li>
+      <li className={Styles.dropdown}>
+        <span>Products</span>
+        <div className={Styles.dropdownContent}>
+          <Link to="/Option1">Option 1</Link>
+          <Link to="/Option2">Option 2</Link>
+          <Link to="/Option3">Option 3</Link>
         </div>
-        <div className={Styles.dropdownShop}>
-          <label>Sales</label>
-          <div className={Styles["dropdownShop-content"]}>
-            <a href="Option1">option 1</a>
-            <a href="Option2">option 2</a>
-            <a href="Option3">option 3</a>
-          </div>
+      </li>
+      <li className={Styles.dropdown}>
+        <span>Sales</span>
+        <div className={Styles.dropdownContent}>
+          <Link to="/Option1">Option 1</Link>
+          <Link to="/Option2">Option 2</Link>
+          <Link to="/Option3">Option 3</Link>
         </div>
-
-        <div className={Styles.boxseca}>
-          <input
-            onClick={() => setShowInput(true)}
-            type="text"
-            className={Styles.SearchInput}
-            placeholder="Search Product"
-            style={{ display: showInput ? "block" : "none" }}
-            onMouseEnter={() => setShowInput(true)}
-            onMouseLeave={() => setShowInput(true)}
-            />
-          <img
-            alt="search"
-            onMouseEnter={() => setShowInput(true)}
-            onMouseLeave={() => setShowInput(false)}
-            src={search}
-            className={Styles.SearchImg}
-            />
-          <img
-            alt="cart"
-            className={Styles.cartimg}
-            onClick={() => setOpenCart(!cart)}
-            src={cart2}
-            />
-          {cart && (
-            <ShoppingCart
-            setOpenCart={setOpenCart}
-            items={cartItems}
-            removeItem={removeCartItem}
-            counts={counts}
-            updateCounts={setCounts}
-            />
-          )}
-        <div>
-        </div>
-      </div>
-      </div>
-      <div className={Styles["wall-top"]} />
-      <Product addProduct={addProductToCart} />
-      <div className={Styles["wall-bottom"]} />
-      <div className={Styles["bottom-container"]} />
+      </li>
+    </ul>
+    <div className={Styles.navIcons}>
+      <input
+        onClick={() => setShowInput(true)}
+        type="text"
+        className={Styles.SearchInput}
+        placeholder="Search Product"
+        style={{ display: showInput ? "block" : "none" }}
+        onMouseEnter={() => setShowInput(true)}
+        onMouseLeave={() => setShowInput(true)}
+      />
+      <img
+        alt="Search"
+        src={search}
+        onMouseEnter={() => setShowInput(true)}
+        onMouseLeave={() => setShowInput(false)}
+        className={Styles.SearchImg}
+      />
+      <img
+        alt="Cart"
+        src={cart2}
+        className={Styles.cartimg}
+        onClick={() => setOpenCart(!cart)}
+      />
+      {cart && (
+        <ShoppingCart
+          setOpenCart={setOpenCart}
+          items={cartItems}
+          removeItem={removeCartItem}
+          counts={counts}
+          updateCounts={setCounts}
+        />
+      )}
     </div>
+  </nav>
+
+  <div className={Styles["wall-top"]} />
+  <Product addProduct={addProductToCart} />
+  <div className={Styles["wall-bottom"]} />
+  <div className={Styles["bottom-container"]} />
+</div>
+
   );
 }
 
