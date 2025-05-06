@@ -69,7 +69,9 @@ function Checkout() {
     }
 
 
+    const oncryptopayment = () => {
 
+    }
     const onCreateOrder2 = (data, actions) => {
         alert("Purchases are currently disabled. This software is not for sale yet.");
         return actions.reject(); // Cancel PayPal flow
@@ -184,6 +186,9 @@ function Checkout() {
                         onError={(err) => console.error("Paypal error: ", err)}
                         disabled={CheckPaymentValue()}
                     />
+                   <button onClick={() =>  oncryptopayment()} className={styles.cryptobtn} disabled>
+                   Crypto Payment
+                </button>
                 </div>
             </div>
             {isModalOpen  && (<Modal details={modaldetails} description={modalmessagedescription} message={modalmessage} onClose={() => ClosePaymentModal()}/>)}
