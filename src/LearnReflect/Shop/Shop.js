@@ -56,7 +56,7 @@ function ShopPage({ handleScrollToPage }) {
         <div className={Styles.dropdownContent}>
         <div className={Styles.dropdownSection}>
           <h4>Men</h4>
-          <Link>Jackets</Link>
+         <p><Link>Jackets</Link></p> 
           <Link>Shirts</Link>
           <Link>Shoes</Link>
           </div>

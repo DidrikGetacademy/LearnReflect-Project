@@ -13,7 +13,7 @@ function ShoppingCart({
   const Navigate = useNavigate();
 
   const GotoPayment = () => {
-    Navigate('/Payment', { state: { totalAmount }});
+    // Navigate('/Payment', { state: { totalAmount }});
   }
 
  
@@ -61,7 +61,7 @@ function ShoppingCart({
                   <span>{item.description}</span>
                 </div>
                 <button onClick={() => handleincrement(item)}>+</button>
-                <span>{counts[item.id] || 0}</span>
+                <span className={Styles.itemCount}>{counts[item.id] || 0}</span>
                 <button onClick={() => handledecrement(item)}>-</button>
                 <button onClick={() => removeItem(item)}>Remove</button>
                 <div>{item.Price}$</div>

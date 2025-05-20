@@ -109,15 +109,33 @@
 }
 
 
+.itemCount{
+  border-radius: 30px;
+  width:20px;
+  height:20px;
+  background-color: black;
+}
 
-/*ShoppingCart*/
 .shopping-cart{
+  display:flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  scroll-behavior: auto;
+}
 
+.shopping-cart button {
+  background-color: darkgrey;
+  color: black;
+}
+.shopping-cart span {
+  background-color: darkgrey;
+  color: black;
 }
 
 .Cart-Container {
   position: fixed;
-  top: 70px;
+  top: 125px;
   right: 0;
   width: 400px;
   height: 90vh;
@@ -126,7 +144,7 @@
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
   animation: slide-in 0.3s ease-out forwards;
-  overflow: hidden;
+ /* overflow: hidden;*/
 }
 
 .item {
@@ -143,7 +161,7 @@
 .navbar {
   position: sticky;
   top:0;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -151,6 +169,10 @@
   padding: 10px 20px;
   z-index: 50;
 
+}
+
+.navbar button {
+  border: 4px solid white
 }
 .description{
 
@@ -168,14 +190,25 @@
 
 .total-price{
 
+  color: black;
 }
 
 .Checkout{
-
+background-color: grey;
+color:white;
+border-radius: 30px;
+text-align: center;
+justify-content: center;
+align-items: center;
 }
 
 .Close{
-
+background-color: grey;
+color:white;
+border-radius: 30px;
+text-align: center;
+justify-content: center;
+align-items: center;
 }
 
 
@@ -247,7 +280,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background-color: grey;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 20px 40px;
   min-width: 700px; /* Bigger width */
@@ -268,12 +301,22 @@
 .dropdownSection {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px 20px;
+
+  padding: auto;
   min-width: 150px;
   border-right: 1px solid #eee; 
+  color:black;
 }
-
+.dropdownSection a {
+  margin:auto;
+  height:fit-content;
+  width:fit-content;
+  
+  border: 2px solid black
+}
+.dropdownSection Link {
+  color:black;
+}
 .dropdownSection:last-child {
   border-right: none; 
 }
@@ -348,11 +391,12 @@
 .SearchImg {
   height: 50px;
   width: 50px;
-  background-color: white;
+  background-color: darkgrey;
   border-radius: 50%;
   padding: 8px;
   cursor: pointer;
   transition: transform 0.3s;
+  color: grey;
 }
 
 .SearchImg:hover {
@@ -370,6 +414,7 @@
   padding: 0 10px;
   background: white;
   overflow: hidden;
+  color: black;
 }
 
 .show {
