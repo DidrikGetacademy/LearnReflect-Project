@@ -13,14 +13,15 @@ function WhitelistPage() {
             <div className={styles.whitelist}>
               <WhitelistComponent />
             </div>
-            <div className={styles.learnReflect}>
+            <div className={styles.LearnReflect}>
               <p>
+                <h2>cutting-edge & self-improvement</h2>
                 LearnReflect is a cutting-edge self-improvement platform that
                 harnesses the power of AI<br/> To help - Assist & guide you to
                 achieve personal growth.
               </p>
               <p>
-                Build discipline & stay motivated.<br /> Our suite of AI-driven
+                <h2>Build discipline & stay motivated.</h2><br /> Our suite of AI-driven
                 tools includes routine planners and personalized motivation
                 strategies. The LR-Chatbot is pre-trained for self-improvement
                 and will continuously learn from your conversations, becoming
@@ -30,7 +31,7 @@ function WhitelistPage() {
                 goals.
               </p>
               <p>
-                In addition<br /> we offer advanced AI models for enhancing
+                <h2>In addition</h2><br/> we offer advanced AI models for enhancing
                 video and audio quality, making LearnReflect an all-in-one
                 solution<br /> for anyone seeking to improve themselves and
                 their productivity. <br />
@@ -39,7 +40,8 @@ function WhitelistPage() {
                 becoming the best version of yourself.
               </p>
               <p>
-                And coming soon, the LearnReflect Store will provide you with
+                <h2>And coming soon,</h2><br></br>
+                the LearnReflect Store will provide you with
                 exclusive products, resources, and tools designed to support
                 your self-improvement journey. Stay tuned for exciting
                 offerings!

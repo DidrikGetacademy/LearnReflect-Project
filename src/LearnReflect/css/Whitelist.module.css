@@ -1,25 +1,13 @@
 html, body {
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .pagecomponent {
-  padding-top: 100px; /* adjust based on your header/menu height */
+  padding-top: 100px;
 }
 
 
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 500px;
-  height: 300px;
-  max-width: 80%;
-  box-shadow: 0 0 20px 5px rgba(225, 241, 0, 0.8),
-    0 0 40px 10px rgba(0, 255, 128, 0.8), 0 0 60px 15px rgba(0, 0, 255, 0.8);
-}
 
 .modal {
   display: block;
@@ -50,13 +38,7 @@ html, body {
   font-style: normal;
 }
 
-.close-button {
-  width: 100%;
-  height: 25%;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-}
+
 
 label {
   color: black;
@@ -64,45 +46,17 @@ label {
   text-align: center;
 }
 
-.EmailForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  max-width: 400px;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 10px;
-}
 
-.submitbutton {
-  width: 100%;
-  height: auto;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.submitbutton:hover {
-  background-color: #0056b3;
-}
 
-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: lightgrey;
-  color: black;
-} 
+
 
 label {
   color: black;
   margin-bottom: 10px;
   text-align: center;
 }
+
 
 
 p {
@@ -121,10 +75,103 @@ p {
     align-items: center;
     width: 100%;
     margin: 40px 0;
-    overflow-y: hidden;
+    padding: 40px 20px;
+    overflow-y: auto;
+    background: #0d0d0d;
   }
 
+.EmailForm {
+  background: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 128, 0.1);
+}
 
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  background: #000000;
+  border: 1px solid #999;
+  font-size: 1rem;
+} 
+input, .submitbutton, .close-button {
+  transition: all 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.modal-content {
+  animation: fadeIn 0.5s ease-out;
+}
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+  padding: 25px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.error-message button {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.closebtn{
+  width:100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+}
+.close-button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+.close-button:hover {
+  background: white;
+  color: black;
+}
+.submitbutton {
+  width: 100%;
+  height: auto;
+  background-color: #0a2f57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitbutton:hover {
+  background-color: #0056b3;
+}
+.submitbutton:after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: 100px; height: 100px;
+  background: rgba(255,255,255,0.3);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+
+.modal-content {
+  background: #121212;
+  color: #eee;
+  box-shadow: 0 0 20px rgba(0,255,128,0.3);
+  border-radius: 12px;
+  padding: 30px;
+}
 
 .P-Early{
   color: white;
@@ -138,7 +185,8 @@ p.Thankyou{
   opacity: 0.95;
   height:100vh;
   width: 100%;
-  overflow-y: hidden;
+  margin: auto;
+
 }
 
 
@@ -176,7 +224,8 @@ p.Thankyou{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: visible;}
+  overflow: visible;
+}
 
 .scroll-container {
   height: auto;
@@ -238,9 +287,18 @@ h1.HomeTopTitle {
 
 .LearnReflect {
   margin-top: 60px;
-  padding: 0 15px;
+  margin: 100px auto 0 auto;  
   width: 100%;
-  max-width: 800px;
+}
+
+
+.LearnReflect p{
+   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  line-height: 1.9;    
+  hyphens: auto;
+  letter-spacing: 0.02em;   
+  text-align: justify;    
+  margin-bottom: 1.5rem;  
 }
 
 
@@ -352,3 +410,10 @@ h2 {
 }
 
 
+/*Media queryies*/
+
+@media (min-width: 480px) { }
+@media (min-width: 768px) { }
+@media (min-width: 1024px) { }
+@media (min-width: 1200px) { }
+@media (min-width: 1440px) { }

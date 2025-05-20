@@ -84,7 +84,7 @@ function WhitelistComponent() {
         </button>
         {Errormsg && (
           <p className="error-message">
-            {Errormsg} <button>Close</button>
+            {Errormsg} <button classname={styles.closebtn}>Close</button>
           </p>
         )}
       </form>
